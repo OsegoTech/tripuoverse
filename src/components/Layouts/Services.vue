@@ -5,7 +5,7 @@
     <div>
       <div v-for="service in services" :key="service.id">
         <ServiceCard
-          :service-description="service.description"
+          :service-description="service.title"
           :service-name="service.name"
         />
       </div>
@@ -27,6 +27,7 @@ console.log(services);
 onMounted(() => {
   fetchServices();
 });
+
 </script>
 
 <style lang="scss" scoped></style>
