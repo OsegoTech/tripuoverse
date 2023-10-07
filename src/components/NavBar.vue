@@ -9,7 +9,7 @@
           class="text-xl font-bold text-gray-100 md:text-2xl hover:text-indigo-400"
         >
             <!-- <img src="../assets/logo.png" alt="logo" /> -->
-            Mall-Hub
+            Tripuo-Verse
         </router-link>
         <!-- Mobile Menu -->
         <div @click="toggleNav" class="flex md:hidden">

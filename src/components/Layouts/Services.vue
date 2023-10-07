@@ -15,14 +15,18 @@
 
 <script setup>
 import ServiceCard from "../ServiceCard.vue";
-import { useServiceStore } from "../../store";
+import { useServiceStore } from "../../store/index.js";
 import { storeToRefs } from "pinia";
+import { onMounted } from "vue";
 
-const { services, service, loading, error } = storeToRefs(useServiceStore());
-const { fetchServices } = useServiceStore();
-fetchServices();
-
+const servicesOfferd = useServiceStore();
+const { services, service, loading, error } = storeToRefs(servicesOfferd);
+const { fetchServices } = servicesOfferd;
 console.log(services);
+
+onMounted(() => {
+  fetchServices();
+});
 </script>
 
 <style lang="scss" scoped></style>

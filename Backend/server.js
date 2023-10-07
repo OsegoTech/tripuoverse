@@ -4,12 +4,17 @@ import dotenv from 'dotenv';
 import connectDB from './config/db.js';
 import morgan from 'morgan';
 import serviceRoutes from './routes/ServiceRoutes.js';
+import cors from 'cors';
 
 dotenv.config();
 
 connectDB();
 const app = express();
 app.use(morgan('dev'));
+app.use(cors({
+    origin: '*'
+    
+}));
 
 app.use(express.json());
 app.use(bodyParser.json());
