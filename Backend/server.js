@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import connectDB from "./config/db.js";
 import morgan from "morgan";
 import serviceRoutes from "./routes/ServiceRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
 import cors from "cors";
 
 dotenv.config();
@@ -13,7 +14,8 @@ const app = express();
 app.use(morgan("dev"));
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    // origin: "*",
+    origin: ["http://localhost:5173", "http://192.168.1.101:5173/"],
   })
 );
 
@@ -25,6 +27,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/services", serviceRoutes);
+app.use("/api/users", userRoutes);
 
 const PORT = process.env.PORT;
 
