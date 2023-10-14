@@ -8,8 +8,8 @@
           to="/"
           class="text-xl font-bold text-gray-100 md:text-2xl hover:text-indigo-400"
         >
-            <!-- <img src="../assets/logo.png" alt="logo" /> -->
-            Tripuo-Verse
+          <!-- <img src="../assets/logo.png" alt="logo" /> -->
+          Tripuo-Verse
         </router-link>
         <!-- Mobile Menu -->
         <div @click="toggleNav" class="flex md:hidden">
@@ -61,6 +61,13 @@
             to="/contact"
             class="font-medium text-gray-100 hover:text-indigo-400"
             >Contact</router-link
+          >
+        </li>
+        <li>
+          <router-link
+            to="/login"
+            class="font-medium text-gray-100 hover:text-indigo-400"
+            >Login</router-link
           >
         </li>
       </ul>

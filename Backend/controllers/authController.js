@@ -58,5 +58,6 @@ export const login = asyncHandler(async (req, res, next) => {
   res.status(200).json({
     status: "success",
     token,
+    user,
   });
 });
