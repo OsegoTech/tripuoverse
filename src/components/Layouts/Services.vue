@@ -15,7 +15,7 @@
 
 <script setup>
 import ServiceCard from "../ServiceCard.vue";
-import { useServiceStore } from "../../store/index.js";
+import { useServiceStore } from "../../store/servicesStore.js";
 import { storeToRefs } from "pinia";
 import { onMounted } from "vue";
 

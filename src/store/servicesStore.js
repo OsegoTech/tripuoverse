@@ -4,6 +4,7 @@ import axios from "axios";
 export const useServiceStore = defineStore({
   id: "service",
   state: () => ({
+    user: null,
     services: [],
     service: {},
     loading: false,

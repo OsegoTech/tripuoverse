@@ -5,66 +5,117 @@
     <div
       class="w-full p-6 m-auto bg-white border-t border-indigo-600 rounded shadow-lg shadow-indigo-800/50 lg:max-w-md"
     >
-      <h1 class="text-3xl font-semibold text-center text-indigo-700">
+      <h3 class="text-3xl font-semibold text-center text-indigo-700">
         Tripuo-Verse
-      </h1>
+      </h3>
       <h6 class="text-2xl font-semibold text-center text-indigo-700">
         Register
       </h6>
 
-      <form class="mt-4">
+      <Form
+        class="mt-4"
+        @submit="onSubmit"
+        :validation-schema="schema"
+        v-slot="{ errors }"
+      >
         <div>
-          <label for="email" class="block text-sm text-gray-800"
+          <label for="firstName" class="block text-sm text-gray-800"
             >First Name</label
           >
-          <input
-            type="text"
-            class="block w-full px-4 py-2 mt-1 text-indigo-700 bg-white border rounded-md focus:border-indigo-400 focus:ring-indigo-300 focus:outline-none focus:ring focus:ring-opacity-40"
-          />
-        </div>
-        <div>
-          <label for="email" class="block text-sm text-gray-800"
-            >Last Name</label
-          >
-          <input
+          <Field
+            name="firstName"
+            :class="{ 'is-invalid': errors.firstName }"
             type="text"
             class="block w-full px-4 py-1 mt-1 text-indigo-700 bg-white border rounded-md focus:border-indigo-400 focus:ring-indigo-300 focus:outline-none focus:ring focus:ring-opacity-40"
           />
+          <div class="invalid-feedback">
+            {{ errors.firstName }}
+          </div>
         </div>
         <div>
+          <label for="lastName" class="block text-sm text-gray-800"
+            >Last Name</label
+          >
+          <Field
+            name="lastName"
+            :class="{ 'is-invalid': errors.lastName }"
+            type="text"
+            class="block w-full px-4 py-1 mt-1 text-indigo-700 bg-white border rounded-md focus:border-indigo-400 focus:ring-indigo-300 focus:outline-none focus:ring focus:ring-opacity-40"
+          />
+          <div class="invalid-feedback">
+            {{ errors.lastName }}
+          </div>
+        </div>
+
+        <div>
           <label for="email" class="block text-sm text-gray-800">Email</label>
-          <input
+          <Field
+            name="email"
+            :class="{ 'is-invalid': errors.email }"
             type="email"
             class="block w-full px-4 py-1 mt-1 text-indigo-700 bg-white border rounded-md focus:border-indigo-400 focus:ring-indigo-300 focus:outline-none focus:ring focus:ring-opacity-40"
           />
+          <div class="invalid-feedback">
+            {{ errors.email }}
+          </div>
         </div>
+
         <div>
           <label for="phone" class="block text-sm text-gray-800"
             >Telephone</label
           >
-          <input
+          <Field
+            name="phone"
+            :class="{ 'is-invalid': errors.phone }"
             type="text"
             class="block w-full px-4 py-1 mt-1 text-indigo-700 bg-white border rounded-md focus:border-indigo-400 focus:ring-indigo-300 focus:outline-none focus:ring focus:ring-opacity-40"
           />
+          <div class="invalid-feedback">
+            {{ errors.phone }}
+          </div>
         </div>
         <div>
           <label for="whatsapp" class="block text-sm text-gray-800"
             >Whatsapp</label
           >
-          <input
+          <Field
+            name="whatsapp"
+            :class="{ 'is-invalid': errors.whatsapp }"
             type="text"
             class="block w-full px-4 py-1 mt-1 text-indigo-700 bg-white border rounded-md focus:border-indigo-400 focus:ring-indigo-300 focus:outline-none focus:ring focus:ring-opacity-40"
           />
+          <div class="invalid-feedback">
+            {{ errors.whatsapp }}
+          </div>
         </div>
         <div class="mt-1">
           <div>
             <label for="password" class="block text-sm text-gray-800"
               >Password</label
             >
-            <input
+            <Field
+              name="password"
+              :class="{ 'is-invalid': errors.password }"
               type="password"
               class="block w-full px-4 py-1 mt-1 text-indigo-700 bg-white border rounded-md focus:border-indigo-400 focus:ring-indigo-300 focus:outline-none focus:ring focus:ring-opacity-40"
             />
+            <div class="invalid-feedback">
+              {{ errors.password }}
+            </div>
+          </div>
+          <div>
+            <label for="passwordConfirm" class="block text-sm text-gray-800"
+              >Confirm Password</label
+            >
+            <Field
+              name="passwordConfirm"
+              :class="{ 'is-invalid': errors.passwordConfirm }"
+              type="password"
+              class="block w-full px-4 py-1 mt-1 text-indigo-700 bg-white border rounded-md focus:border-indigo-400 focus:ring-indigo-300 focus:outline-none focus:ring focus:ring-opacity-40"
+            />
+            <div class="invalid-feedback">
+              {{ errors.passwordConfirm }}
+            </div>
           </div>
           <router-link
             to="/forgot-password"
@@ -79,8 +130,7 @@
             </button>
           </div>
         </div>
-      </form>
-      <p class="mt-8 text-xs font-light text-center text-gray-700">
+        <p class="mt-8 text-xs font-light text-center text-gray-700">
         Already have an account?
         <router-link
           to="/login"
@@ -88,12 +138,16 @@
           >Login</router-link
         >
       </p>
+      </Form>
+      
     </div>
   </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
+import { Field, Form } from "vee-validate";
+import * as Yup from "yup";
 const newUser = ref({
   firstName: "",
   lastName: "",
@@ -103,7 +157,19 @@ const newUser = ref({
   password: "",
 });
 
-
+const schema = Yup.object().shape({
+  firstName: Yup.string().required("First Name is required"),
+  lastName: Yup.string().required("Last Name is required"),
+  email: Yup.string().email().required("Email is required"),
+  phone: Yup.string().required("Phone is required"),
+  whatsapp: Yup.string().required("Whatsapp is required"),
+  password: Yup.string()
+    .required("Password is required")
+    .min(6, "Password must be at least 6 characters"),
+  confirmPassword: Yup.string()
+    .oneOf([Yup.ref("password"), null], "Passwords must match")
+    .required("Confirm Password is required"),
+});
 </script>
 
 <style lang="scss" scoped></style>
