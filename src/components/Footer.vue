@@ -7,56 +7,56 @@
               <p class="font-medium tracking-wide text-gray-300">Category</p>
               <ul class="mt-2 space-y-2">
                 <li>
+                  <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Blogs</a>
+                </li>
+                <li>
                   <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">News</a>
                 </li>
                 <li>
-                  <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">World</a>
+                  <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Hang Out</a>
                 </li>
                 <li>
-                  <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Games</a>
-                </li>
-                <li>
-                  <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">References</a>
+                  <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Events</a>
                 </li>
               </ul>
             </div>
             <div>
-              <p class="font-medium tracking-wide text-gray-300">Apples</p>
+              <p class="font-medium tracking-wide text-gray-300">Products</p>
               <ul class="mt-2 space-y-2">
                 <li>
-                  <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Web</a>
+                  <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Brand New</a>
                 </li>
                 <li>
-                  <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">eCommerce</a>
+                  <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Secondhand</a>
                 </li>
                 <li>
-                  <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Business</a>
+                  <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Hot Selling</a>
                 </li>
                 <li>
-                  <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Entertainment</a>
+                  <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Electronics</a>
                 </li>
                 <li>
-                  <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Portfolio</a>
+                  <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Apparels</a>
                 </li>
               </ul>
             </div>
             <div>
-              <p class="font-medium tracking-wide text-gray-300">Cherry</p>
+              <p class="font-medium tracking-wide text-gray-300">Services</p>
               <ul class="mt-2 space-y-2">
                 <li>
-                  <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Media</a>
+                  <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Media (Photo and Video)</a>
                 </li>
                 <li>
-                  <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Brochure</a>
+                  <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Website Design</a>
                 </li>
                 <li>
-                  <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Nonprofit</a>
+                  <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Mobile App Development</a>
                 </li>
                 <li>
-                  <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Educational</a>
+                  <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Training Services</a>
                 </li>
                 <li>
-                  <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Projects</a>
+                  <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Consultation</a>
                 </li>
               </ul>
             </div>
@@ -64,16 +64,16 @@
               <p class="font-medium tracking-wide text-gray-300">Business</p>
               <ul class="mt-2 space-y-2">
                 <li>
-                  <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Infopreneur</a>
+                  <router-link to="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Advertise</router-link>
                 </li>
                 <li>
-                  <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Personal</a>
+                  <router-link to="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Create a shop</router-link>
                 </li>
                 <li>
-                  <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Wiki</a>
+                  <router-link to="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Partner</router-link>
                 </li>
                 <li>
-                  <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Forum</a>
+                  <router-link to="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Promote Shop</router-link>
                 </li>
               </ul>
             </div>
@@ -95,13 +95,13 @@
               </button>
             </form>
             <p class="mt-4 text-sm text-gray-500">
-              Bacon ipsum dolor amet short ribs pig sausage prosciuto chicken spare ribs salami.
+              Subscribe to our newsletter to get updates on our latest offers!
             </p>
           </div>
         </div>
         <div class="flex flex-col justify-between pt-5 pb-10 border-t border-gray-800 sm:flex-row">
           <p class="text-sm text-gray-500">
-            © Copyright 2020 Lorem Inc. All rights reserved.
+            © Copyright {{year}} Tripuo-Verse. All rights reserved.
           </p>
           <div class="flex items-center mt-4 space-x-4 sm:mt-0">
             <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-teal-accent-400">
@@ -132,4 +132,7 @@
     </div>
   </template>
 
-<script setup></script>
+<script setup>
+const date  = new Date();
+const year = date.getFullYear();
+</script>

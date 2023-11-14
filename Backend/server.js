@@ -14,8 +14,8 @@ const app = express();
 app.use(morgan("dev"));
 app.use(
   cors({
-    // origin: "*",
-    origin: ["http://localhost:5173", "http://192.168.1.101:5173/"],
+    origin: "*",
+    // origin: ["http://localhost:5173", "http://192.168.1.101:5173/"],
   })
 );
 

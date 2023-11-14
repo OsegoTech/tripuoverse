@@ -1,5 +1,4 @@
 import { defineStore, acceptHMRUpdate } from "pinia";
-import axios from "axios";
 
 export const useServiceStore = defineStore({
   id: "service",

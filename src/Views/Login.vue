@@ -11,58 +11,42 @@
       <h6 class="text-2xl font-semibold text-center text-indigo-700">
         Sign In
       </h6>
-
-      <Form
-        @submit="onSubmit"
-        class="mt-6"
-        :validation-schema="schema"
-        v-slot="{ errors, isSubmitting }"
-      >
+      <form @submit.prevent="login" method="POST">
         <div>
           <label for="email" class="block text-sm text-gray-800">Email</label>
-          <Field
+          <input
             type="email"
+            autocomplete="email"
+            placeholder="Enter your email"
             name="email"
-            :class="{ 'is-invalid': errors.email }"
+            v-model="user.email"
             class="block w-full px-4 py-2 mt-2 text-indigo-700 bg-white border rounded-md focus:border-indigo-400 focus:ring-indigo-300 focus:outline-none focus:ring focus:ring-opacity-40"
           />
-          <div class="invalid-feedback">
-            {{ errors.email }}
-          </div>
         </div>
-        <div class="mt-4">
-          <div>
-            <label for="password" class="block text-sm text-gray-800"
-              >Password</label
-            >
-            <Field
-              type="password"
-              name="password"
-              :class="{ 'is-invalid': errors.password }"
-              class="block w-full px-4 py-2 mt-2 text-indigo-700 bg-white border rounded-md focus:border-indigo-400 focus:ring-indigo-300 focus:outline-none focus:ring focus:ring-opacity-40"
-            />
-            <div class="invalid-feedback">
-              {{ errors.password }}
-            </div>
-          </div>
-          <router-link
-            to="/forgot-password"
-            class="text-xs text-gray-600 hover:underline"
-            >Forget Password?</router-link
+        <div>
+          <label for="password" class="block text-sm text-gray-800"
+            >Password</label
           >
-          <div class="mt-6">
-            <button
-              disabled="isSubmitting"
-              class="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none focus:bg-indigo-600"
-            >
-              Login
-            </button>
-          </div>
-          <div v-if="errors.apiError">
-            {{ errors.apiError }}
-          </div>
+          <input
+            type="password"
+            name="password"
+            autocomplete="current-password"
+            placeholder="Enter your password"
+            v-model="user.password"
+            class="block w-full px-4 py-2 mt-2 text-indigo-700 bg-white border rounded-md focus:border-indigo-400 focus:ring-indigo-300 focus:outline-none focus:ring focus:ring-opacity-40"
+          />
         </div>
-      </Form>
+        <div class="mt-3">
+          <button
+            type="submit"
+            :disabled="loading"
+            class="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none focus:bg-indigo-600"
+          >
+            Login
+          </button>
+        </div>
+      </form>
+
       <p class="mt-8 text-xs font-light text-center text-gray-700">
         Don't have an account?
         <router-link
@@ -77,18 +61,31 @@
 
 <script setup>
 import { ref } from "vue";
-import { Form, Field } from "vee-validate";
-import * as Yup from "yup";
+import store from "../store/index.js";
+import router from "../routes/index.js";
 
-const schema = Yup.object({
-  email: Yup.string().email().required(),
-  password: Yup.string().required(),
-});
+let loading = ref(false);
+let errorMsg = ref("");
 
-const user = ref({
+const user = {
   email: "",
   password: "",
-});
+};
+
+function login() {
+  loading.value = true;
+  store
+    .dispatch("login", user)
+    .then(() => {
+      loading.value = false;
+      router.push({ name: "Home" });
+    })
+    .catch(({ response }) => {
+      loading.value = false;
+      console.log(response);
+      errorMsg.value = response.data.message;
+    });
+}
 </script>
 
 <style lang="scss" scoped></style>

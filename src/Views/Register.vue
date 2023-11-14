@@ -12,164 +12,116 @@
         Register
       </h6>
 
-      <Form
-        class="mt-4"
-        @submit="onSubmit"
-        :validation-schema="schema"
-        v-slot="{ errors }"
-      >
-        <div>
-          <label for="firstName" class="block text-sm text-gray-800"
-            >First Name</label
-          >
-          <Field
-            name="firstName"
-            :class="{ 'is-invalid': errors.firstName }"
-            type="text"
-            class="block w-full px-4 py-1 mt-1 text-indigo-700 bg-white border rounded-md focus:border-indigo-400 focus:ring-indigo-300 focus:outline-none focus:ring focus:ring-opacity-40"
-          />
-          <div class="invalid-feedback">
-            {{ errors.firstName }}
-          </div>
-        </div>
-        <div>
-          <label for="lastName" class="block text-sm text-gray-800"
-            >Last Name</label
-          >
-          <Field
-            name="lastName"
-            :class="{ 'is-invalid': errors.lastName }"
-            type="text"
-            class="block w-full px-4 py-1 mt-1 text-indigo-700 bg-white border rounded-md focus:border-indigo-400 focus:ring-indigo-300 focus:outline-none focus:ring focus:ring-opacity-40"
-          />
-          <div class="invalid-feedback">
-            {{ errors.lastName }}
-          </div>
-        </div>
-
-        <div>
-          <label for="email" class="block text-sm text-gray-800">Email</label>
-          <Field
-            name="email"
-            :class="{ 'is-invalid': errors.email }"
-            type="email"
-            class="block w-full px-4 py-1 mt-1 text-indigo-700 bg-white border rounded-md focus:border-indigo-400 focus:ring-indigo-300 focus:outline-none focus:ring focus:ring-opacity-40"
-          />
-          <div class="invalid-feedback">
-            {{ errors.email }}
-          </div>
-        </div>
-
-        <div>
-          <label for="phone" class="block text-sm text-gray-800"
-            >Telephone</label
-          >
-          <Field
-            name="phone"
-            :class="{ 'is-invalid': errors.phone }"
-            type="text"
-            class="block w-full px-4 py-1 mt-1 text-indigo-700 bg-white border rounded-md focus:border-indigo-400 focus:ring-indigo-300 focus:outline-none focus:ring focus:ring-opacity-40"
-          />
-          <div class="invalid-feedback">
-            {{ errors.phone }}
-          </div>
-        </div>
-        <div>
-          <label for="whatsapp" class="block text-sm text-gray-800"
-            >Whatsapp</label
-          >
-          <Field
-            name="whatsapp"
-            :class="{ 'is-invalid': errors.whatsapp }"
-            type="text"
-            class="block w-full px-4 py-1 mt-1 text-indigo-700 bg-white border rounded-md focus:border-indigo-400 focus:ring-indigo-300 focus:outline-none focus:ring focus:ring-opacity-40"
-          />
-          <div class="invalid-feedback">
-            {{ errors.whatsapp }}
-          </div>
-        </div>
-        <div class="mt-1">
-          <div>
-            <label for="password" class="block text-sm text-gray-800"
-              >Password</label
-            >
-            <Field
-              name="password"
-              :class="{ 'is-invalid': errors.password }"
-              type="password"
-              class="block w-full px-4 py-1 mt-1 text-indigo-700 bg-white border rounded-md focus:border-indigo-400 focus:ring-indigo-300 focus:outline-none focus:ring focus:ring-opacity-40"
+      <form  @submit.prevent="register">
+        <div class="flex flex-col space-y-4">
+          <div class="flex flex-col space-y-1">
+            <label for="firstName">First Name</label>
+            <input
+              type="text"
+              id="firstName"
+              v-model="newUser.firstName"
+              class="px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-indigo-600"
             />
-            <div class="invalid-feedback">
-              {{ errors.password }}
-            </div>
           </div>
-          <div>
-            <label for="passwordConfirm" class="block text-sm text-gray-800"
-              >Confirm Password</label
-            >
-            <Field
-              name="passwordConfirm"
-              :class="{ 'is-invalid': errors.passwordConfirm }"
-              type="password"
-              class="block w-full px-4 py-1 mt-1 text-indigo-700 bg-white border rounded-md focus:border-indigo-400 focus:ring-indigo-300 focus:outline-none focus:ring focus:ring-opacity-40"
+          <div class="flex flex-col space-y-1">
+            <label for="lastName">Last Name</label>
+            <input
+              type="text"
+              id="lastName"
+              v-model="newUser.lastName"
+              class="px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-indigo-600"
             />
-            <div class="invalid-feedback">
-              {{ errors.passwordConfirm }}
-            </div>
           </div>
-          <router-link
-            to="/forgot-password"
-            class="text-xs text-gray-600 hover:underline"
-            >Forget Password?</router-link
-          >
-          <div class="mt-6">
+          <div class="flex flex-col space-y-1">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              v-model="newUser.email"
+              class="px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-indigo-600"
+            />
+          </div>
+          <div class="flex flex-col space-y-1">
+            <label for="phone">Phone</label>
+            <input
+              type="tel"
+              id="phone"
+              v-model="newUser.phone"
+              class="px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-indigo-600"
+            />
+          </div>
+          <div class="flex flex-col space-y-1">
+            <label for="whatsapp">Whatsapp</label>
+            <input
+              type="tel"
+              id="whatsapp"
+              v-model="newUser.whatsapp"
+              class="px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-indigo-600"
+            />
+          </div>
+          <div class="flex flex-col space-y-1">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              v-model="newUser.password"
+              class="px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-indigo-600"
+            />
+          </div>
+          <div class="flex flex-col space-y-1">
+            <label for="confirmPassword">Confirm Password</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              v-model="newUser.confirmPassword"
+              class="px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-indigo-600"
+            />
+          </div>
+          <div class="flex flex-col space-y-1">
             <button
-              class="w-full px-4 py-1 tracking-wide text-white transition-colors duration-200 transform bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none focus:bg-indigo-600"
+              type="submit"
+              class="px-4 py-2 text-white bg-indigo-600 rounded hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-600"
             >
               Register
             </button>
           </div>
         </div>
-        <p class="mt-8 text-xs font-light text-center text-gray-700">
-        Already have an account?
-        <router-link
-          to="/login"
-          class="font-medium text-indigo-600 hover:underline"
-          >Login</router-link
-        >
-      </p>
-      </Form>
-      
+      </form>
     </div>
   </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
-import { Field, Form } from "vee-validate";
-import * as Yup from "yup";
-const newUser = ref({
+import store from "../store/index.js";
+import router from "../routes/index.js";
+
+const loading = ref(false);
+const errorMsg = ref("");
+
+const newUser = {
   firstName: "",
   lastName: "",
   email: "",
   phone: "",
-  whatsapp: "",
+  whatsApp: "",
   password: "",
-});
+  passwordConfirm: "",
+};
 
-const schema = Yup.object().shape({
-  firstName: Yup.string().required("First Name is required"),
-  lastName: Yup.string().required("Last Name is required"),
-  email: Yup.string().email().required("Email is required"),
-  phone: Yup.string().required("Phone is required"),
-  whatsapp: Yup.string().required("Whatsapp is required"),
-  password: Yup.string()
-    .required("Password is required")
-    .min(6, "Password must be at least 6 characters"),
-  confirmPassword: Yup.string()
-    .oneOf([Yup.ref("password"), null], "Passwords must match")
-    .required("Confirm Password is required"),
-});
+function register() {
+  loading.value = true;
+  store
+    .dispatch("register", newUser)
+    .then(() => {
+      loading.value = false;
+      router.push({ name: "Home" });
+    })
+    .catch((err) => {
+      loading.value = false;
+      errorMsg.value = err.response.data.message;
+    });
+}
 </script>
 
 <style lang="scss" scoped></style>

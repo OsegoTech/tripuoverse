@@ -70,16 +70,35 @@
             >Login</router-link
           >
         </li>
+        <li>
+          <button
+            type="button"
+            class="px-4 py-2 text-sm font-medium text-white bg-indigo-500 rounded-md hover:bg-indigo-400 focus:outline-none focus:bg-indigo-400"
+            @click="logout"
+          >
+            Logout
+          </button>
+        </li>
       </ul>
     </nav>
   </div>
 </template>
 
 <script setup>
+
 import { ref } from "vue";
+import router from "../routes/index.js";
+import store from "../store/index.js";  
 
 let showMenu = ref(false);
 const toggleNav = () => (showMenu.value = !showMenu.value);
+
+function logout() {
+  store.dispatch("logout").then(() => {
+    router.push({ name: "Login" });
+  });
+
+}
 </script>
 
 <style lang="scss" scoped></style>
