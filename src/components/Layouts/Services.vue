@@ -4,11 +4,13 @@
     <div v-if="error">Error: {{ error }}</div>
     <div class="md:flex gap-2 mx-3 my-3">
       <div v-for="service in services" :key="service.id">
-        <ServiceCard
-          :service-description="service.description"
-          :service-name="service.name"
-        />
-      </div>
+        <transition name="fade">
+          <ServiceCard
+            :service-description="service.description"
+            :service-name="service.name"
+          />
+        </transition>
+        </div>
     </div>
   </div>
 </template>
@@ -27,7 +29,14 @@ console.log(services);
 onMounted(() => {
   fetchServices();
 });
-
 </script>
 
-<style lang="scss" scoped></style>
+<style module>
+.fade-enter{
+  opacity: 0;
+}
+
+.fade-enter-active{
+  transition: opacity 1s ease-in;
+}
+</style>

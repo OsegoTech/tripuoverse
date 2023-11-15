@@ -55,7 +55,7 @@
             <input
               type="tel"
               id="whatsapp"
-              v-model="newUser.whatsapp"
+              v-model="newUser.whatsApp"
               class="px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-indigo-600"
             />
           </div>
@@ -73,7 +73,7 @@
             <input
               type="password"
               id="confirmPassword"
-              v-model="newUser.confirmPassword"
+              v-model="newUser.passwordConfirm"
               class="px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-indigo-600"
             />
           </div>
