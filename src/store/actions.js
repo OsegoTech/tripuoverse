@@ -21,3 +21,10 @@ export function logout({commit}){
     commit("setUser", {})
     commit("setToken", null)
 }
+
+export function getServices({commit}){
+    return axiosClient.get("/services")
+    .then(({data}) => {
+        commit("setProducts", data)
+    })
+}

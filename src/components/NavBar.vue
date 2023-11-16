@@ -63,7 +63,7 @@
             >Contact</router-link
           >
         </li>
-        <li>
+        <li v-if="!currentUser">
           <router-link
             to="/login"
             class="font-medium text-gray-100 hover:text-indigo-400"
@@ -75,9 +75,16 @@
             type="button"
             class="px-4 py-2 text-sm font-medium text-white bg-indigo-500 rounded-md hover:bg-indigo-400 focus:outline-none focus:bg-indigo-400"
             @click="logout"
+            v-if="currentUser"
           >
             Logout
           </button>
+        </li>
+        <li
+          v-if="currentUser"
+          class="font-medium text-gray-100 hover:text-indigo-400"
+        >
+          {{ currentUser.firstName }}
         </li>
       </ul>
     </nav>
@@ -85,10 +92,10 @@
 </template>
 
 <script setup>
-
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import router from "../routes/index.js";
-import store from "../store/index.js";  
+import store from "../store/index.js";
+
 
 let showMenu = ref(false);
 const toggleNav = () => (showMenu.value = !showMenu.value);
@@ -97,8 +104,10 @@ function logout() {
   store.dispatch("logout").then(() => {
     router.push({ name: "Login" });
   });
-
 }
+
+const currentUser = computed(() => store.state.user.data);
+console.log(currentUser.firstName);
 </script>
 
 <style lang="scss" scoped></style>

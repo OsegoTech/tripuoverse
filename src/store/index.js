@@ -8,9 +8,7 @@ const store = createStore({
     mutations,
     actions,
     getters: {
-       authenticatedUser: (state) => 
-           state.user.data.firstName
-       
+       currentUser: state => state.user.data,
     },
 })
 
