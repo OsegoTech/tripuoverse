@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- top navigation -->
-    <div class="flex justify-around bg-indigo-700 text-white py-4">
+    <div class="flex justify-around bg-indigo-700 text-white py-1">
       <div>
         <h2>Welcome to Tripuo-Verse Marketplace</h2>
       </div>
@@ -35,7 +35,7 @@
     </div>
     <!-- middle navigation -->
     <div
-      class="flex items-center justify-around py-3 bg-indigo-700 text-white border-t-2 border-blue-100"
+      class="flex items-center justify-around py-1 bg-indigo-700 text-white border-t-2 border-blue-100"
     >
       <div>
         <h1 class="text-3xl">Tripuo-Verse</h1>
@@ -72,7 +72,7 @@
       </div>
     </div>
     <!-- bottom navigation -->
-    <div class="flex justify-around py-2 border-b-2 border-gray-300">
+    <div class="flex justify-around py-1 border-b-2 border-gray-300">
       <div class="flex justify-around gap-4 items-center">
         <select
           name=""

@@ -1,7 +1,10 @@
 <template>
   <widget />
   <navigation />
-  <featured-product />
+  <div class="w-full md:w-[80%] mx-auto">
+    <featured-product />
+    <features />
+  </div>
 </template>
 
 <script setup>
@@ -11,6 +14,7 @@ import store from "../store/index.js";
 import Widget from "./Header/Widget.vue";
 import Navigation from "./Header/Navigation.vue";
 import FeaturedProduct from "./Header/FeaturedProduct.vue";
+import Features from "./Header/Features.vue";
 
 let showMenu = ref(false);
 const toggleNav = () => (showMenu.value = !showMenu.value);

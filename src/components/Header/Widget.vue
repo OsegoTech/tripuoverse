@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col lg:flex-row lg:justify-around w-full text-white bg-black bg-no-repeat bg-cover bg-center items-center py-2"
+    class="flex flex-col lg:flex-row lg:justify-around w-full text-white bg-black bg-no-repeat bg-cover bg-center items-center py-1"
   >
     <div class="flex items-center gap-2">
       <div class="bg-yellow-300 px-3 py-1 text-black rounded-md">Black</div>
