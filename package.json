@@ -11,6 +11,11 @@
     "host": "vite  --host"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.4.2",
+    "@fortawesome/free-brands-svg-icons": "^6.4.2",
+    "@fortawesome/free-regular-svg-icons": "^6.4.2",
+    "@fortawesome/free-solid-svg-icons": "^6.4.2",
+    "@fortawesome/vue-fontawesome": "^3.0.5",
     "@heroicons/vue": "^2.0.18",
     "@vee-validate/zod": "^4.11.8",
     "axios": "^1.5.1",
@@ -34,6 +39,7 @@
     "validator": "^13.11.0",
     "vee-validate": "^4.11.8",
     "vue": "^3.3.4",
+    "vue-material-design-icons": "^5.2.0",
     "vue-query": "^1.26.0",
     "vue-router": "^4.2.5",
     "vuex": "^4.1.0",
