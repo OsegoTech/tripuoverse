@@ -66,8 +66,12 @@
         <div>
           <i class="fa-solid fa-heart fa-beat fa-lg"></i>
         </div>
-        <div>
+        <div class="relative" @click="toggleUserNav">
           <i class="fa-solid fa-user fa-lg"></i>
+
+          <div class="absolute top-7">
+            <UserNavigation v-if="showUserNav" />
+          </div>
         </div>
       </div>
     </div>
@@ -97,6 +101,13 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref } from "vue";
+import UserNavigation from "../../Views/UserNavigation.vue";
+
+const showUserNav = ref(false);
+
+const toggleUserNav = () => (showUserNav.value = !showUserNav.value);
+</script>
 
 <style lang="scss" scoped></style>

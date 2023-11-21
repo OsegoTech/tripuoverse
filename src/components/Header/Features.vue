@@ -1,6 +1,6 @@
 <template>
   <div
-    class="grid grid-cols-1 md:grid-cols-4 justify-items-center border-2 border-indigo-700 py-5 px-auto rounded-lg"
+    class="grid grid-cols-1 md:grid-cols-4 justify-items-center border-2 border-indigo-700 py-2 px-auto rounded-lg"
   >
     <div class="flex items-center gap-2">
       <span>

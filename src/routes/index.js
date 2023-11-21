@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import Login from "../views/Login.vue";
 import HomePage from "../views/HomePage.vue";
 import Register from "../views/Register.vue";
+import UserNavigation from "../views/UserNavigation.vue";
 import store from "../store";
 
 const routes = [
@@ -17,7 +18,6 @@ const routes = [
       requiresGuest: true,
     },
     component: Login,
-    
   },
   {
     path: "/register",
@@ -25,8 +25,12 @@ const routes = [
     meta: {
       requiresGuest: true,
     },
-    component: Register
-
+    component: Register,
+  },
+  {
+    path: '/user-navigation',
+    name: 'UserNavigation',
+    component: UserNavigation
   }
 ];
 
@@ -36,12 +40,12 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  if(to.meta.requiresAuth && !store.state.user.token) {
-    next({name: "Login"})
+  if (to.meta.requiresAuth && !store.state.user.token) {
+    next({ name: "Login" });
   } else if (to.meta.requiresGuest && store.state.user.token) {
-    next({name: "Home"})
+    next({ name: "Home" });
   } else {
-    next()
+    next();
   }
 });
 
