@@ -37,9 +37,11 @@
     <div
       class="flex items-center justify-around py-1 bg-indigo-700 text-white border-t-2 border-blue-100"
     >
-      <div>
-        <h1 class="text-3xl">Tripuo-Verse</h1>
-      </div>
+      <Transition name="b" appear>
+        <div>
+          <h1 class="text-3xl trip">Tripuo-Verse</h1>
+        </div>
+      </Transition>
       <div>
         <form action="">
           <div class="flex items-center gap-2">
@@ -110,4 +112,37 @@ const showUserNav = ref(false);
 const toggleUserNav = () => (showUserNav.value = !showUserNav.value);
 </script>
 
-<style lang="scss" scoped></style>
+<style  scoped>
+.trip {
+  font-family: "Dancing Script", cursive;
+  color: aqua;
+}
+
+:deep(.b-enter-from) {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.b-enter-to {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.b-enter-active {
+  transition: all 1.5s ease-in-out;
+}
+
+.b-leave-from {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.b-leave-to {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.b-leave-active {
+  transition: all 1.5s ease-in-out;
+}
+</style>
