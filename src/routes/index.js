@@ -3,7 +3,7 @@ import Login from "../views/Login.vue";
 import HomePage from "../views/HomePage.vue";
 import Register from "../views/Register.vue";
 import UserNavigation from "../views/UserNavigation.vue";
-import store from "../store";
+import store from "../store/index.js";
 
 const routes = [
   {
@@ -35,7 +35,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes,
 });
 
@@ -43,6 +43,7 @@ router.beforeEach((to, from, next) => {
   if (to.meta.requiresAuth && !store.state.user.token) {
     next({ name: "Login" });
   } else if (to.meta.requiresGuest && store.state.user.token) {
+    console.log('user token', store.state.user.token);
     next({ name: "Home" });
   } else {
     next();

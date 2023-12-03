@@ -37,11 +37,11 @@
     <div
       class="flex items-center justify-around py-1 bg-indigo-700 text-white border-t-2 border-blue-100"
     >
-      <Transition name="b" appear>
-        <div>
+      <div>
+        <Transition name="bounce">
           <h1 class="text-3xl trip">Tripuo-Verse</h1>
-        </div>
-      </Transition>
+        </Transition>
+      </div>
       <div>
         <form action="">
           <div class="flex items-center gap-2">
@@ -68,11 +68,13 @@
         <div>
           <i class="fa-solid fa-heart fa-beat fa-lg"></i>
         </div>
-        <div class="relative" @click="toggleUserNav">
+        <div class="relative" @click="toggleUserNav" >
           <i class="fa-solid fa-user fa-lg"></i>
 
           <div class="absolute top-7">
-            <UserNavigation v-if="showUserNav" />
+            <Transition name="bounce">
+              <UserNavigation v-if="showUserNav" />
+            </Transition>
           </div>
         </div>
       </div>
@@ -107,42 +109,42 @@
 import { ref } from "vue";
 import UserNavigation from "../../Views/UserNavigation.vue";
 
-const showUserNav = ref(false);
+const showUserNav = ref();
 
-const toggleUserNav = () => (showUserNav.value = !showUserNav.value);
+const toggleUserNav = () => showUserNav.value = !showUserNav.value;
 </script>
 
-<style  scoped>
+<style scoped>
 .trip {
   font-family: "Dancing Script", cursive;
   color: aqua;
 }
 
-:deep(.b-enter-from) {
+.bounce-enter-from {
   opacity: 0;
   transform: translateY(10px);
 }
 
-.b-enter-to {
+.bounce-enter-to {
   opacity: 1;
   transform: translateY(0);
 }
 
-.b-enter-active {
-  transition: all 1.5s ease-in-out;
+.bounce-enter-active {
+  transition: all 0.5s ease-in-out;
 }
 
-.b-leave-from {
+/* .bounce-leave-from {
   opacity: 1;
   transform: translateY(0);
 }
 
-.b-leave-to {
+.bounce-leave-to {
   opacity: 0;
   transform: translateY(10px);
 }
 
-.b-leave-active {
+.bounce-leave-active {
   transition: all 1.5s ease-in-out;
-}
+} */
 </style>

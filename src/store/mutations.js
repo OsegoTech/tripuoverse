@@ -1,5 +1,10 @@
 export function setUser(state, user) {
   state.user.data = user;
+  if (user) {
+    localStorage.setItem("USER", JSON.stringify(user));
+  } else {
+    localStorage.removeItem("USER");
+  }
 }
 
 export function setToken(state, token) {

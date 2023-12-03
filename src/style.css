@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* .bounce-enter-from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  
+  .bounce-enter-to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .bounce-enter-active {
+    transition: all 1.5s ease-in-out;
+  }
+  
+  .bounce-leave-from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .bounce-leave-to {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  
+  .bounce-leave-active {
+    transition: all 1.5s ease-in-out;
+  } */
