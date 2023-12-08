@@ -7,12 +7,20 @@
       <div>
         <p>Profile</p>
         <p>Settings</p>
-        <p>Logout</p>
+        <p @click="logout" class="text-red-500 cursor-pointer">Logout</p>
       </div>
     </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import store from "../store/index.js";
+import router from "../routes/index.js";
+
+const logout = () => {
+  store.dispatch("logout");
+  router.push("/login");
+};
+</script>
 
 <style lang="scss" scoped></style>
