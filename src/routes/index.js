@@ -4,6 +4,7 @@ import HomePage from "../views/HomePage.vue";
 import Register from "../views/Register.vue";
 import UserNavigation from "../views/UserNavigation.vue";
 import LoginRegister from "../views/LoginRegister.vue";
+import CreateProduct from "../components/CreateProduct.vue";
 import store from "../store/index.js";
 
 const routes = [
@@ -37,6 +38,11 @@ const routes = [
     path: "/auth",
     name: "Auth",
     component: LoginRegister,
+  },
+  {
+    path: "/create-product",
+    name: "CreateProduct",
+    component: CreateProduct,
   },
   // {
   //   path: "/:pathMatch(.*)*",

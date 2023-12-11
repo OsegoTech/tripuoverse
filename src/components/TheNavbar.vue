@@ -82,6 +82,17 @@
         </li>
       </ul>
       <div class="flex gap-3 items-center">
+        <!-- Modal toggle -->
+        <!-- Modal toggle -->
+        <button
+          data-modal-target="crud-modal"
+          data-modal-toggle="crud-modal"
+          class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          type="button"
+        >
+          Toggle modal
+        </button>
+
         <svg
           width="24"
           height="24"
@@ -102,7 +113,7 @@
           class="h-10 w-10 hover:ring-4 user cursor-pointer relative ring-blue-700/30 rounded-full bg-cover bg-center bg-[url('https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')]"
           @click="toggleDrawer"
         >
-          <Transition name="smoother">
+          <Transition name="smoother" class="z-50">
             <UserNavigation v-if="drawer" />
           </Transition>
         </div>
@@ -126,14 +137,19 @@
       </div>
     </nav>
   </div>
+  
 </template>
 
 <script setup>
 import UserNavigation from "./UserNavigation.vue";
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
+import { initModals } from "flowbite";
 
 const drawer = ref(false);
 const toggleDrawer = () => (drawer.value = !drawer.value);
+onMounted(() => {
+  initModals;
+});
 </script>
 
 <style scoped>
@@ -145,6 +161,7 @@ const toggleDrawer = () => (drawer.value = !drawer.value);
 .smoother-enter-from,
 .smoother-leave-to {
   opacity: 0;
+  /* transform: translateX(50px); */
 }
 
 .smooth-enter-to,

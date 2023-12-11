@@ -28,3 +28,11 @@ export function getServices({commit}){
         commit("setProducts", data)
     })
 }
+
+
+export function createService({commit}, data){
+    return axiosClient.post("/services", data)
+    .then(({data}) => {
+        commit("setServices", data)
+    })
+}

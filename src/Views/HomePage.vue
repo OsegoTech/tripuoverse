@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TheNavbar />
+    <TheNavbar @toggle-modal="toggleModal" />
     <div class="container mx-auto py-8">
       <div
         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
@@ -19,6 +19,7 @@
 
         <!-- Repeat the above product card structure for each product -->
       </div>
+      <CreateProduct />
     </div>
     <Footer />
   </div>
@@ -32,6 +33,7 @@ import TheNavbar from "../components/TheNavbar.vue";
 // import useServiceStore
 import { useServiceStore } from "../store/servicesStore.js";
 import { storeToRefs } from "pinia";
+import CreateProduct from "../components/CreateProduct.vue";
 
 const servicesOffered = useServiceStore();
 const { services, loading, error } = storeToRefs(servicesOffered);

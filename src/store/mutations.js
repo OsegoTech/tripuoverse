@@ -15,3 +15,7 @@ export function setToken(state, token) {
     localStorage.removeItem("TOKEN");
   }
 }
+
+export function setServices(state, service) {
+  state.service = service;
+}

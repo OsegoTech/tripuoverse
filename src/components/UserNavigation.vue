@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="z-50">
     <div
       class="drop-down w-48 overflow-hidden bg-white rounded-md shadow absolute top-12 right-3"
     >
