@@ -5,6 +5,7 @@ import connectDB from "./config/db.js";
 import morgan from "morgan";
 import serviceRoutes from "./routes/ServiceRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
+import categoryRoutes from "./routes/CategoryRoutes.js";
 import cors from "cors";
 
 dotenv.config();
@@ -28,6 +29,7 @@ app.get("/", (req, res) => {
 
 app.use("/api/services", serviceRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/categories", categoryRoutes);
 
 const PORT = process.env.PORT;
 
