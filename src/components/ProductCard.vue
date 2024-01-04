@@ -7,10 +7,7 @@
       <div
         class="relative mx-4 mt-4 h-40 overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700"
       >
-        <img
-          src="https://images.unsplash.com/photo-1629367494173-c78a56567877?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=927&amp;q=80"
-          class=" w-full h-full object-cover"
-        />
+        <img :src="image" class="w-full h-full object-cover" />
       </div>
       <div class="p-3">
         <div class="mb-2 flex items-center justify-between">

@@ -8,6 +8,13 @@ import userRoutes from "./routes/userRoutes.js";
 import categoryRoutes from "./routes/CategoryRoutes.js";
 import cors from "cors";
 
+// file modules
+import {fileURLToPath} from "url"
+import {dirname} from "path"
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 dotenv.config();
 
 connectDB();
@@ -23,6 +30,9 @@ app.use(
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use('/public', express.static(__dirname + '/public'));
+
+
 app.get("/", (req, res) => {
   res.send("Hello From the Mall-Hub!");
 });

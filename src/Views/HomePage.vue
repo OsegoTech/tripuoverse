@@ -12,6 +12,7 @@
             :price="service.price"
             :description="service.description"
             :date="service.created_at"
+            :image="getImageUrl(service.image)"
             seller="John Doe"
           />
         </div>
@@ -37,11 +38,16 @@ import CreateProduct from "../components/CreateProduct.vue";
 
 const servicesOffered = useServiceStore();
 const { services, loading, error } = storeToRefs(servicesOffered);
+console.log(services);
 const { fetchServices } = servicesOffered;
 
 onBeforeMount(() => {
   fetchServices();
 });
+
+const getImageUrl = (image) => {
+  return `http://localhost:5000/public/coverImages/${image}`;
+};
 </script>
 
 <style lang="scss" scoped></style>

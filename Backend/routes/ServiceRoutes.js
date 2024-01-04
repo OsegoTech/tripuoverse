@@ -7,7 +7,7 @@ import {
 
 const router = express.Router();
 
-router.post("/", upload.single("image"), createService);
+router.post("/", upload.single('image'), createService);
 router.get("/", getServices);
 
 export default router;
