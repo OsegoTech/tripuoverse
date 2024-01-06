@@ -1,6 +1,8 @@
 <template>
   <div>
-    <TheNavbar @toggle-modal="toggleModal" />
+    <TheNavbar />
+    <HeroSection />
+    <FeatureSection />
     <div class="container mx-auto py-8">
       <div
         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
@@ -31,6 +33,8 @@ import { onBeforeMount } from "vue";
 import Footer from "../components/Footer.vue";
 import ProductCard from "../components/ProductCard.vue";
 import TheNavbar from "../components/TheNavbar.vue";
+import HeroSection from "../components/HeroSection.vue";
+import FeatureSection from "../components/FeatureSection.vue";
 // import useServiceStore
 import { useServiceStore } from "../store/servicesStore.js";
 import { storeToRefs } from "pinia";

@@ -5,6 +5,9 @@ import Register from "../views/Register.vue";
 import UserNavigation from "../views/UserNavigation.vue";
 import LoginRegister from "../views/LoginRegister.vue";
 import CreateProduct from "../components/CreateProduct.vue";
+import ProductView from "../views/ProductsView.vue";
+import ServicesView from "../views/ServicesView.vue";
+import ContactView from "../views/ContactView.vue";
 import store from "../store/index.js";
 
 const routes = [
@@ -44,6 +47,26 @@ const routes = [
     name: "CreateProduct",
     component: CreateProduct,
   },
+  {
+    path: "/products",
+    name: "Product",
+    component: ProductView
+  },
+  {
+    path: "/products/:id",
+    name: "Product2",
+    component: ProductView
+  },
+  {
+    path: "/services",
+    name: "Services",
+    component: ServicesView
+  },
+  {
+    path: "/contact",
+    name: "Contact",
+    component: ContactView
+  }
   // {
   //   path: "/:pathMatch(.*)*",
   //   name: "NotFound",
