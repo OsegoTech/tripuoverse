@@ -2,15 +2,15 @@
   <div>
     <section class="bg-white dark:bg-gray-900">
       <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
-        <div class="max-w-screen-md mb-8 lg:mb-16">
+        <div class="max-w-screen-md mb-8 lg:mb-16 ">
           <h2
-            class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white"
+            class="mb-4 lg:mb-8 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white"
           >
-            Designed for business teams like yours
+            Earn the right Value for your Item and Service
           </h2>
           <p class="text-gray-500 sm:text-xl dark:text-gray-400">
-            Here at Flowbite we focus on markets where technology, innovation,
-            and capital can unlock long-term value and drive economic growth.
+            List your services and items on our platform and get the right
+            customer and value for your service and item.
           </p>
         </div>
         <div
@@ -35,9 +35,11 @@
             </div>
             <h3 class="mb-2 text-xl font-bold dark:text-white">Marketing</h3>
             <p class="text-gray-500 dark:text-gray-400">
-              Plan it, create it, launch it. Collaborate seamlessly with all the
-              organization and hit your marketing goals every month with our
-              marketing plan.
+              "At TripuoVerse, we understand the importance of getting your
+              listings in front of the right audience. Our platform not only
+              simplifies the buying and selling process but also provides you
+              with powerful tools to boost the visibility of your items or
+              services."
             </p>
           </div>
           <div>
@@ -55,10 +57,13 @@
                 ></path>
               </svg>
             </div>
-            <h3 class="mb-2 text-xl font-bold dark:text-white">Legal</h3>
+            <h3 class="mb-2 text-xl font-bold dark:text-white">
+              Featured Listings
+            </h3>
             <p class="text-gray-500 dark:text-gray-400">
-              Protect your organization, devices and stay compliant with our
-              structured workflows and custom permissions made for you.
+              Stand out from the crowd by featuring your listings. Our platform
+              offers a 'Featured Listings' option, giving your items or services
+              prime visibility and attracting more potential buyers.
             </p>
           </div>
           <div>
@@ -82,11 +87,13 @@
               </svg>
             </div>
             <h3 class="mb-2 text-xl font-bold dark:text-white">
-              Business Automation
+              Social Media Integration
             </h3>
             <p class="text-gray-500 dark:text-gray-400">
-              Auto-assign tasks, send Slack messages, and much more. Now power
-              up with hundreds of new templates to help you get started.
+              Share your listings effortlessly on social media platforms.
+              Connect your account and let your friends, followers, and the
+              wider community know about what you have to offer. It's a great
+              way to expand your reach and find the right buyers.
             </p>
           </div>
           <div>
@@ -109,10 +116,14 @@
                 ></path>
               </svg>
             </div>
-            <h3 class="mb-2 text-xl font-bold dark:text-white">Finance</h3>
+            <h3 class="mb-2 text-xl font-bold dark:text-white">
+              Community Engagement
+            </h3>
             <p class="text-gray-500 dark:text-gray-400">
-              Audit-proof software built for critical financial operations like
-              month-end close and quarterly budgeting.
+              Engage with our community forum or blog to share your experiences,
+              tips, and unique offerings. Building a presence within the
+              community not only promotes your listings but also establishes you
+              as a trusted seller among peers.
             </p>
           </div>
           <div>
@@ -131,11 +142,12 @@
               </svg>
             </div>
             <h3 class="mb-2 text-xl font-bold dark:text-white">
-              Enterprise Design
+              Direct Payments
             </h3>
             <p class="text-gray-500 dark:text-gray-400">
-              Craft beautiful, delightful experiences for both marketing and
-              product with real cross-company collaboration.
+              We offer a direct payment option, allowing you to receive payments
+              directly into your bank account. This is a great way to ensure
+              that you get paid quickly and securely.
             </p>
           </div>
           <div>
@@ -157,8 +169,10 @@
             </div>
             <h3 class="mb-2 text-xl font-bold dark:text-white">Operations</h3>
             <p class="text-gray-500 dark:text-gray-400">
-              Keep your company’s lights on with customizable, iterative, and
-              structured workflows built for all efficient teams and individual.
+              No middlemen or third parties. We provide a direct line of contact
+              between you and your customers. Engage directly with your
+              potential customers and get the right value for your service or
+              item.
             </p>
           </div>
         </div>

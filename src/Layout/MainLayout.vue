@@ -1,18 +1,19 @@
 <template>
   <div>
-    <TheNavbar class="mb-12 lg:mb-8"/>
+    <TheNavbar />
 
     <slot>
-        <!-- This is where the content of the page will be rendered -->
+      <!-- This is where the content of the page will be rendered -->
     </slot>
 
-    <Footer />
+    <TheFooter />
   </div>
 </template>
 
 <script setup>
 import TheNavbar from "../components/TheNavbar.vue";
 import Footer from "../components/Footer.vue";
+import TheFooter from "../components/TheFooter.vue";
 </script>
 
 <style lang="scss" scoped></style>
