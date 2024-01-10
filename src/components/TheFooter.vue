@@ -1,103 +1,98 @@
 <template>
   <div>
-    <footer class="bg-white dark:bg-gray-900">
-      <div class="mx-auto w-full max-w-screen-xl">
-        <div class="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
-          <div>
-            <h2
-              class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white"
-            >
-              Company
-            </h2>
-            <ul class="text-gray-500 dark:text-gray-400 font-medium">
-              <li class="mb-4">
-                <a href="#" class="hover:underline">About</a>
-              </li>
-              <li class="mb-4">
-                <a href="#" class="hover:underline">Careers</a>
-              </li>
-              <li class="mb-4">
-                <a href="#" class="hover:underline">Brand Center</a>
-              </li>
-              <li class="mb-4">
-                <a href="#" class="hover:underline">Blog</a>
-              </li>
-            </ul>
+    <footer class="bg-white dark:bg-gray-900 border-t-4 border-gray-200">
+      <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+        <div class="md:flex md:justify-between">
+          <div class="mb-6 md:mb-0">
+            <RouterLink to="/" class="flex items-center">
+              <img
+                src="https://flowbite.com/docs/images/logo.svg"
+                class="h-8 me-3"
+                alt="FlowBite Logo"
+              />
+              <span
+                class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
+                >Studeez</span
+              >
+            </RouterLink>
           </div>
-          <div>
-            <h2
-              class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white"
-            >
-              Help center
-            </h2>
-            <ul class="text-gray-500 dark:text-gray-400 font-medium">
-              <li class="mb-4">
-                <a href="#" class="hover:underline">Discord Server</a>
-              </li>
-              <li class="mb-4">
-                <a href="#" class="hover:underline">Twitter</a>
-              </li>
-              <li class="mb-4">
-                <a href="#" class="hover:underline">Facebook</a>
-              </li>
-              <li class="mb-4">
-                <a href="#" class="hover:underline">Contact Us</a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h2
-              class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white"
-            >
-              Legal
-            </h2>
-            <ul class="text-gray-500 dark:text-gray-400 font-medium">
-              <li class="mb-4">
-                <a href="#" class="hover:underline">Privacy Policy</a>
-              </li>
-              <li class="mb-4">
-                <a href="#" class="hover:underline">Licensing</a>
-              </li>
-              <li class="mb-4">
-                <a href="#" class="hover:underline">Terms &amp; Conditions</a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h2
-              class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white"
-            >
-              Download
-            </h2>
-            <ul class="text-gray-500 dark:text-gray-400 font-medium">
-              <li class="mb-4">
-                <a href="#" class="hover:underline">iOS</a>
-              </li>
-              <li class="mb-4">
-                <a href="#" class="hover:underline">Android</a>
-              </li>
-              <li class="mb-4">
-                <a href="#" class="hover:underline">Windows</a>
-              </li>
-              <li class="mb-4">
-                <a href="#" class="hover:underline">MacOS</a>
-              </li>
-            </ul>
+          <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+            <div>
+              <h2
+                class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white"
+              >
+                Resources
+              </h2>
+              <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                <li class="mb-4">
+                  <RouterLink to="/services" class="hover:underline"
+                    >Services</RouterLink
+                  >
+                </li>
+                <li>
+                  <RouterLink to="/products" class="hover:underline"
+                    >Products</RouterLink
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:underline">New</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:underline">Secondhand</a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h2
+                class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white"
+              >
+                Follow us
+              </h2>
+              <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                <li class="mb-4">
+                  <a href="https://github.com/OsegoTech" class="hover:underline"
+                    >Github</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://discord.gg/4eeurUVvTy"
+                    class="hover:underline"
+                    >Discord</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h2
+                class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white"
+              >
+                Legal
+              </h2>
+              <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                <li class="mb-4">
+                  <a href="#" class="hover:underline">Privacy Policy</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-        <div
-          class="px-4 py-6 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-between"
-        >
-          <span class="text-sm text-gray-500 dark:text-gray-300 sm:text-center"
-            >© 2023 <a href="https://flowbite.com/">Flowbite™</a>. All Rights
-            Reserved.
+        <hr
+          class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"
+        />
+        <div class="sm:flex sm:items-center sm:justify-between">
+          <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"
+            >© {{ date }}
+            <a href="https://flowbite.com/" class="hover:underline">Studeez™</a
+            >. All Rights Reserved.
           </span>
-          <div
-            class="flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse"
-          >
+          <div class="flex mt-4 sm:justify-center sm:mt-0">
             <a
               href="#"
-              class="text-gray-400 hover:text-gray-900 dark:hover:text-white"
+              class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
             >
               <svg
                 class="w-4 h-4"
@@ -116,7 +111,7 @@
             </a>
             <a
               href="#"
-              class="text-gray-400 hover:text-gray-900 dark:hover:text-white"
+              class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
             >
               <svg
                 class="w-4 h-4"
@@ -133,7 +128,7 @@
             </a>
             <a
               href="#"
-              class="text-gray-400 hover:text-gray-900 dark:hover:text-white"
+              class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
             >
               <svg
                 class="w-4 h-4"
@@ -152,7 +147,7 @@
             </a>
             <a
               href="#"
-              class="text-gray-400 hover:text-gray-900 dark:hover:text-white"
+              class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
             >
               <svg
                 class="w-4 h-4"
@@ -171,7 +166,7 @@
             </a>
             <a
               href="#"
-              class="text-gray-400 hover:text-gray-900 dark:hover:text-white"
+              class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
             >
               <svg
                 class="w-4 h-4"
@@ -195,6 +190,9 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const date = new Date().getFullYear();
+console.log(date);
+</script>
 
 <style lang="scss" scoped></style>

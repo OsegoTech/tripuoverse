@@ -36,7 +36,7 @@ onBeforeMount(() => {
 });
 
 const getImageUrl = (image) => {
-  return `http://localhost:5000/public/coverImages/${image}`;
+  return `http://localhost:5000/public/serviceImages/${image}`;
 };
 </script>
 

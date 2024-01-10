@@ -1,6 +1,7 @@
 import Service from "../models/ServicesModel.js";
 import asyncHandler from "express-async-handler";
 import multer from "multer";
+import sharp from "sharp";
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -11,10 +12,25 @@ const storage = multer.diskStorage({
   },
 });
 
+const resizeServicePhoto = asyncHandler(async (req, res, next) => {
+  if (!req.file) return next();
+
+  req.file.filename = `service-${Date.now()}.jpeg`;
+
+  await sharp(req.file.path)
+    .resize(400, 300, { fit: "fill" })
+    .toFormat("jpeg")
+    .jpeg({ quality: 90 })
+    .toFile(`Backend/public/serviceImages/${req.file.filename}`);
+
+  next();
+});
+
 const upload = multer({ storage });
 
 const createService = asyncHandler(async (req, res, next) => {
   const { name, description, price } = req.body;
+  console.log(req.file);
   const image = req.file.filename;
   try {
     const service = await Service.create({
@@ -40,4 +56,4 @@ const getServices = asyncHandler(async (req, res, next) => {
   res.status(200).json(services);
 });
 
-export { createService, upload, getServices };
+export { createService, upload, getServices, resizeServicePhoto };

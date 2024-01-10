@@ -5,7 +5,7 @@
         class="min-h-screen flex flex-col justify-center items-center "
       >
         <img
-          src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5"
+          src="../assets/images/coming-soon.png"
           alt="Logo"
           class="object-cover w-40 h-40 mb-8 rounded-full"
         />
