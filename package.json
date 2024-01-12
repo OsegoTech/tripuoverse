@@ -29,6 +29,7 @@
     "express-async-handler": "^1.2.0",
     "flowbite": "^2.2.0",
     "gsap": "^3.12.4",
+    "intasend-node": "^1.0.8",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^7.6.0",
     "morgan": "^1.10.0",

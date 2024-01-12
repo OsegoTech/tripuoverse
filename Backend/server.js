@@ -9,6 +9,7 @@ import authRoutes from "./routes/AuthRoutes.js";
 import categoryRoutes from "./routes/CategoryRoutes.js";
 import productRoutes from "./routes/ProductsRoute.js";
 import cartRoutes from "./routes/CartRoutes.js";
+import orderRoutes from "./routes/OrderRoutes.js";
 import cors from "cors";
 
 // file modules
@@ -35,14 +36,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/public", express.static(__dirname + "/public"));
 
-
-
 app.use("/api/services", serviceRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/categories", categoryRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/products", productRoutes);
 app.use("/api/carts", cartRoutes);
+app.use("/api/orders", orderRoutes);
 
 const PORT = process.env.PORT;
 
