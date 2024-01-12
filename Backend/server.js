@@ -8,6 +8,7 @@ import userRoutes from "./routes/userRoutes.js";
 import authRoutes from "./routes/AuthRoutes.js";
 import categoryRoutes from "./routes/CategoryRoutes.js";
 import productRoutes from "./routes/ProductsRoute.js";
+import cartRoutes from "./routes/CartRoutes.js";
 import cors from "cors";
 
 // file modules
@@ -41,6 +42,7 @@ app.use("/api/users", userRoutes);
 app.use("/api/categories", categoryRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/products", productRoutes);
+app.use("/api/carts", cartRoutes);
 
 const PORT = process.env.PORT;
 
