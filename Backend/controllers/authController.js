@@ -3,32 +3,37 @@ import asyncHandler from "express-async-handler";
 import jwt from "jsonwebtoken";
 // import AppError from "../utils/appError.js";
 
-const signToken = (id) => {
-  return jwt.sign({ id }, process.env.JWT_SECRET, {
+const signToken = (id, isAdmin) => {
+  return jwt.sign({ id , isAdmin}, process.env.JWT_SECRET, {
     expiresIn: process.env.JWT_EXPIRES_IN,
   });
 };
 
 export const signup = asyncHandler(async (req, res) => {
-  //   const newUser = await User.create(req.body);
-  const newUser = await User.create({
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    email: req.body.email,
-    phone: req.body.phone,
-    whatsApp: req.body.whatsApp,
-    password: req.body.password,
-    passwordConfirm: req.body.passwordConfirm,
-  });
+  try {
+    const newUser = await User.create({
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      email: req.body.email,
+      whatsApp: req.body.whatsApp,
+      password: req.body.password,
+      passwordConfirm: req.body.passwordConfirm,
+    });
 
-  const token = signToken(newUser._id);
-  res.status(201).json({
-    status: "success",
-    token,
-    data: {
-      user: newUser,
-    },
-  });
+    const token = signToken(newUser._id, newUser.isAdmin);
+    res.status(201).json({
+      status: "success",
+      token,
+      data: {
+        user: newUser,
+      },
+    });
+  } catch (error) {
+    res.status(500).json({
+      status: "fail",
+      message: error.message,
+    });
+  }
 });
 
 export const login = asyncHandler(async (req, res, next) => {
@@ -54,7 +59,7 @@ export const login = asyncHandler(async (req, res, next) => {
   }
 
   // 3.) If everything is okay, send token to client
-  const token = signToken(user._id);
+  const token = signToken(user._id, user.isAdmin);
   res.status(200).json({
     status: "success",
     token,

@@ -6,7 +6,7 @@ const userSchema = mongoose.Schema(
   {
     firstName: {
       type: String,
-      required: [, "First name is required"],
+      required: [true, "First name is required"],
     },
     lastName: {
       type: String,
@@ -19,9 +19,11 @@ const userSchema = mongoose.Schema(
       lowercase: true,
       validate: [validator.isEmail, "Please provide a valid email"],
     },
-    phone: { type: String, required: true },
+    isAdmin:{
+      type: Boolean,
+      default: false,
+    },
     whatsApp: { type: String, required: true },
-    photo: String,
     role: {
       type: String,
       required: true,
@@ -33,6 +35,7 @@ const userSchema = mongoose.Schema(
       required: [true, "Password is required"],
       minLength: 8,
       select: false,
+
     },
     passwordConfirm: {
       type: String,
@@ -44,6 +47,7 @@ const userSchema = mongoose.Schema(
         },
         message: "Passwords did not match!",
       },
+
     },
     passwordChangedAt: Date,
     passwordResetToken: String,

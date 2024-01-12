@@ -5,12 +5,14 @@ import connectDB from "./config/db.js";
 import morgan from "morgan";
 import serviceRoutes from "./routes/ServiceRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
+import authRoutes from "./routes/AuthRoutes.js";
 import categoryRoutes from "./routes/CategoryRoutes.js";
+import productRoutes from "./routes/ProductsRoute.js";
 import cors from "cors";
 
 // file modules
-import {fileURLToPath} from "url"
-import {dirname} from "path"
+import { fileURLToPath } from "url";
+import { dirname } from "path";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -30,16 +32,15 @@ app.use(
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use('/public', express.static(__dirname + '/public'));
+app.use("/public", express.static(__dirname + "/public"));
 
 
-app.get("/", (req, res) => {
-  res.send("Hello From the Mall-Hub!");
-});
 
 app.use("/api/services", serviceRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/categories", categoryRoutes);
+app.use("/api/auth", authRoutes);
+app.use("/api/products", productRoutes);
 
 const PORT = process.env.PORT;
 
