@@ -1,29 +1,22 @@
 <template>
   <div>
     <MainLayout>
-      <div
-        class="min-h-screen flex flex-col justify-center items-center "
-      >
-        <img
-          src="../assets/images/coming-soon.png"
-          alt="Logo"
-          class="object-cover w-40 h-40 mb-8 rounded-full"
-        />
-        <h1 class="text-4xl font-bold mb-4">Coming Soon</h1>
-        <p class="text-lg mb-8 px-4 md:px-0">
-          We're working hard to bring you products listing. Stay tuned!
-        </p>
-        <div class="flex justify-center items-center space-x-4">
-          <a
-            href="#"
-            class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md"
-            >Learn More</a
-          >
-          <a
-            href="#"
-            class="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-md"
-            >Contact Us</a
-          >
+      <div>
+        <div
+          class="bg-gray-100 mx-auto max-w-[1200px] px-3 py-3 mb-3 mt-3 rounded-md gap-3 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4"
+        >
+          <div v-if="loading">Fetching products...</div>
+          <!-- <div v-else-if="productsCount == 0">No products</div> -->
+          <div v-else v-for="product in products" :key="product.id">
+            <ProductCardVue
+              :name="product.name"
+              :price="product.price"
+              :description="product.description"
+              :image="getImageUrl(product.image)"
+              seller="John Doe"
+              :date="product.date"
+            />
+          </div>
         </div>
       </div>
     </MainLayout>
@@ -31,7 +24,25 @@
 </template>
 
 <script setup>
+import { computed, onMounted } from "vue";
 import MainLayout from "../Layout/MainLayout.vue";
+import ProductCardVue from "../components/ProductCard.vue";
+import store from "../store/index.js";
+
+const products = computed(() => store.state.products);
+const loading = computed(() => store.state.loading);
+const productsCount =  products.value.length
+console.log(`productsCount: ${productsCount}`);
+console.log(products.value);
+
+// fetch products when component is mounted
+onMounted(async () => {
+  store.dispatch("fetchProducts");
+});
+
+const getImageUrl = (image) => {
+  return `http://localhost:5000/public/productImages/${image}`;
+};
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped></style>

@@ -6,11 +6,20 @@ import {
   createProduct,
   updateProduct,
   deleteProduct,
+  upload,
+  resizeProductPhoto,
 } from "../controllers/ProductController.js";
 
 const router = express.Router();
 
-router.route("/").get(getProducts).post(verifyTokenAndAdmin, createProduct);
+router.route("/").get(getProducts);
+router.post(
+  "/",
+  upload.single("image"),
+  resizeProductPhoto,
+  verifyTokenAndAdmin,
+  createProduct
+);
 
 router
   .route("/:id")
