@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Login from "../views/Login.vue";
+// import Login from "../views/Login.vue";
 import HomePage from "../views/HomePage.vue";
 import Register from "../views/Register.vue";
 import UserNavigation from "../views/UserNavigation.vue";
