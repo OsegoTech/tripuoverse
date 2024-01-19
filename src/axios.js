@@ -6,7 +6,7 @@ const url = `${import.meta.env.VITE_API_BASE_URL}`;
 console.log(url);
 
 const axiosClient = axios.create({
-    baseURL: `${import.meta.env.VITE_API_BASE_URL}`
+    baseURL: "https://tripuo-verse-api.azurewebsites.net/api"
 });
 
 axiosClient.interceptors.request.use(config => {
