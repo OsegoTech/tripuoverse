@@ -1,13 +1,13 @@
 import { createRouter, createWebHistory } from "vue-router";
-// import Login from "../views/Login.vue";
-import HomePage from "../views/HomePage.vue";
-import Register from "../views/Register.vue";
-import UserNavigation from "../views/UserNavigation.vue";
-import LoginRegister from "../views/LoginRegister.vue";
+import Login from "../Views/Login.vue";
+import HomePage from "../Views/HomePage.vue";
+import Register from "../Views/Register.vue";
+import UserNavigation from "../Views/UserNavigation.vue";
+import LoginRegister from "../Views/LoginRegister.vue";
 import CreateProduct from "../components/CreateProduct.vue";
-import ProductView from "../views/ProductsView.vue";
-import ServicesView from "../views/ServicesView.vue";
-import ContactView from "../views/ContactView.vue";
+import ProductView from "../Views/ProductsView.vue";
+import ServicesView from "../Views/ServicesView.vue";
+import ContactView from "../Views/ContactView.vue";
 import store from "../store/index.js";
 
 const routes = [
@@ -50,28 +50,28 @@ const routes = [
   {
     path: "/products",
     name: "Product",
-    component: ProductView
+    component: ProductView,
   },
   {
     path: "/products/:id",
     name: "Product2",
-    component: ProductView
+    component: ProductView,
   },
   {
     path: "/services",
     name: "Services",
-    component: ServicesView
+    component: ServicesView,
   },
   {
     path: "/contact",
     name: "Contact",
-    component: ContactView
-  }
-  // {
-  //   path: "/:pathMatch(.*)*",
-  //   name: "NotFound",
-  //   component: () => import("../views/NotFound.vue"),
-  // },
+    component: ContactView,
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    name: "NotFound",
+    component: () => import("../views/NotFound.vue"),
+  },
 ];
 
 const router = createRouter({
