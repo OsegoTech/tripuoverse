@@ -14,7 +14,7 @@
 </template>
 
 <script setup>
-import MainLayout from "../layout/MainLayout.vue";
+import MainLayout from "../Layout/MainLayout.vue";
 import HeroSection from "../components/HeroSection.vue";
 import FeatureSection from "../components/FeatureSection.vue";
 import SocialProof from "../components/SocialProof.vue";
