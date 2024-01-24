@@ -3,7 +3,7 @@
     <MainLayout>
       <div>
         <div
-          class="bg-gray-100 mx-auto max-w-[1200px] px-3 py-3 mb-3 mt-3 rounded-md gap-3 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4"
+          class="bg-gray-100 mx-auto max-w-[1200px] px-3 py-3 mb-3  rounded-md gap-3 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4"
         >
           <div v-if="loading">Fetching products...</div>
           <!-- <div v-else-if="productsCount == 0">No products</div> -->

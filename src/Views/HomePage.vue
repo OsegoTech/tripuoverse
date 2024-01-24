@@ -2,7 +2,7 @@
   <div>
     <MainLayout>
       <slot>
-        <HeroSection />
+        <HeroSection  class="pt-10 md:pt-8"/>
         <FeatureSection />
         <SocialProof />
         <TestimonialSection />

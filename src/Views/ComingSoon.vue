@@ -2,7 +2,7 @@
     <div>
       <MainLayout>
         <div
-          class="min-h-screen flex flex-col justify-center items-center "
+          class="min-h-screen flex flex-col justify-center items-center  pt-4"
         >
           <img
             src="../assets/images/coming-soon.png"

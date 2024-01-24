@@ -162,7 +162,11 @@
                   clip-rule="evenodd"
                 />
               </svg>
-              <span class="sr-only">GitHub account</span>
+              <span class="sr-only"
+                ><a href="https://www.github.com/OsegoTech" target="_blank">
+                  GitHub account</a
+                ></span
+              >
             </a>
             <a
               href="#"
