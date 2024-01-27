@@ -2,12 +2,14 @@ import axios from "axios";
 import store from "./store";
 import router from "./routes/index.js";
 
-const url = `${import.meta.env.VITE_API_BASE_URL}`;
+const url = `${import.meta.env.VITE_API_BASE_URL}/api`;
 console.log(url);
 
 const axiosClient = axios.create({
-    baseURL: "https://tripuo-verse-api.azurewebsites.net/api"
+    baseURL: url,
 });
+console.log(url);
+
 
 axiosClient.interceptors.request.use(config => {
     config.headers.Authorization = `Bearer ${store.state.user.token}`;

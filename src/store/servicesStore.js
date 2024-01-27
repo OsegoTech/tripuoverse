@@ -32,7 +32,7 @@ export const useServiceStore = defineStore({
     async fetchService(id) {
       try {
         this.loading = true;
-        const res = await fetch(`https://localhost:5000/api/services/${id}`);
+        const res = await fetch(`https://localhost:8080/api/services/${id}`);
         if (!res.ok) {
           throw new Error("Network response was not ok.");
         }
