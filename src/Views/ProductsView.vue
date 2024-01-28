@@ -12,7 +12,7 @@
               :name="product.name"
               :price="product.price"
               :description="product.description"
-              :image="getImageUrl(product.image)"
+              :image="product.image"
               seller="John Doe"
               :date="product.date"
             />
