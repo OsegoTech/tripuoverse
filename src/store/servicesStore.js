@@ -16,7 +16,7 @@ export const useServiceStore = defineStore({
     async fetchServices() {
       try {
         this.loading = true;
-        const res = await fetch("http://localhost:5000/api/services");
+        const res = await fetch("https://tripuoverse.azurewebsites.net/api/services");
         if (!res.ok) {
           throw new Error("Network response was not ok.");
         }
@@ -32,7 +32,7 @@ export const useServiceStore = defineStore({
     async fetchService(id) {
       try {
         this.loading = true;
-        const res = await fetch(`https://localhost:8080/api/services/${id}`);
+        const res = await fetch(`https://tripuoverse.azurewebsites.net/api/services/${id}`);
         if (!res.ok) {
           throw new Error("Network response was not ok.");
         }
