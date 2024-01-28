@@ -1,6 +1,7 @@
 <template>
   <div>
-    <MainLayout>
+    <TheNavbar />
+    <div>
       <div class="flex justify-center">
         <div
           class="grid grid-12 md:grid-cols-3 lg:grid-cols-4 gap-2 lg:py-3 px-3 lg:max-w-[1200px]"
@@ -16,7 +17,8 @@
           </div>
         </div>
       </div>
-    </MainLayout>
+    </div>
+    <TheFooter />
   </div>
 </template>
 
@@ -26,6 +28,8 @@ import MainLayout from "../Layout/MainLayout.vue";
 import ServiceCard from "../components/ServiceCard.vue";
 import { useServiceStore } from "../store/servicesStore.js";
 import { storeToRefs } from "pinia";
+import TheNavbar from "../components/TheNavbar.vue";
+import TheFooter from "../components/TheFooter.vue";
 const servicesOffered = useServiceStore();
 const { services, loading, error } = storeToRefs(servicesOffered);
 console.log(services);

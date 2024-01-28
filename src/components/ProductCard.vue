@@ -16,9 +16,9 @@
             {{ name }}
           </p>
           <p
-            class="block font-sans text-base font-medium leading-relaxed text-blue-gray-900 antialiased"
+            class="block font-sans text-base font-medium leading-relaxed text-white antialiased bg-blue-600 py-1 px-2 rounded-md"
           >
-            Kes{{ price }}
+            Kes {{ price }}
           </p>
         </div>
         <p

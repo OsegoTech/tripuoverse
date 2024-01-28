@@ -1,6 +1,6 @@
 <template>
-  <div >
-    <div class="bg-blue-100 z-10 fixed w-full block">
+  <div>
+    <div class="bg-blue-100 w-full block">
       <nav
         class="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center"
       >
