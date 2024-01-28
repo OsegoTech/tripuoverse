@@ -1,19 +1,25 @@
 <template>
   <div>
     <div
-      class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+      class="relative flex w-70 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md"
     >
-      <a href="#">
-        <img class="rounded-t-lg" :src="image" alt="product image" />
-      </a>
-      <div class="px-5 pb-5">
-        <a href="#">
-          <h5
-            class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white"
+      <div
+        class="relative mx-4 mt-4 h-40 overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700"
+      >
+        <img
+          class="w-full h-full object-cover"
+          :src="image"
+          alt="product image"
+        />
+      </div>
+      <div class="p-3">
+        <div class="mb-2 flex items-center justify-between">
+          <p
+          class="block font-sans text-base font-medium leading-relaxed text-blue-gray-900 antialiased"
           >
             {{ name }}
-          </h5>
-        </a>
+          </p>
+        </div>
         <div class="flex items-center mt-2.5 mb-5">
           <div class="flex items-center space-x-1 rtl:space-x-reverse">
             <p>Provider:</p>

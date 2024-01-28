@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- component -->
     <div
       class="relative flex w-70 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md"
     >
@@ -29,7 +28,7 @@
         </p>
       </div>
       <div class="p-3 pt-0">
-        <Button  label="Contact Seller"> </Button>
+        <Button label="Contact Seller"> </Button>
       </div>
     </div>
   </div>
