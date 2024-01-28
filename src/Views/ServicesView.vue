@@ -10,7 +10,7 @@
             <ServiceCard
               :name="service.name"
               :price="service.price"
-              :description="service.description"
+              :description="service.description.substring(0, 100) + '...'"
               :image="service.image"
               seller="John Doe"
             />
@@ -23,8 +23,7 @@
 </template>
 
 <script setup>
-import { onBeforeMount } from "vue";
-import MainLayout from "../Layout/MainLayout.vue";
+import { computed, onBeforeMount } from "vue";
 import ServiceCard from "../components/ServiceCard.vue";
 import { useServiceStore } from "../store/servicesStore.js";
 import { storeToRefs } from "pinia";
@@ -39,9 +38,7 @@ onBeforeMount(() => {
   fetchServices();
 });
 
-const getImageUrl = (image) => {
-  return `http://localhost:5000/public/serviceImages/${image}`;
-};
+
 </script>
 
 <style lang="scss" scoped></style>
