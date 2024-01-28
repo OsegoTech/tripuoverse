@@ -10,7 +10,7 @@
               :name="service.name"
               :price="service.price"
               :description="service.description"
-              :image="getImageUrl(service.image)"
+              :image="service.image"
               seller="John Doe"
             />
           </div>
