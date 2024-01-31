@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TheNavbar />
+    <TheNavigate />
     <div>
       <div class="flex justify-center">
         <div
@@ -29,6 +29,7 @@ import { useServiceStore } from "../store/servicesStore.js";
 import { storeToRefs } from "pinia";
 import TheNavbar from "../components/TheNavbar.vue";
 import TheFooter from "../components/TheFooter.vue";
+import TheNavigate from "../components/TheNavigate.vue";
 const servicesOffered = useServiceStore();
 const { services, loading, error } = storeToRefs(servicesOffered);
 console.log(services);

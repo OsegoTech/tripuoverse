@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TheNavbar />
+    <TheNavigate />
     <div>
       <section class="bg-white dark:bg-gray-900 pt-8">
         <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
@@ -74,6 +74,7 @@
 <script setup>
 import TheFooter from "../components/TheFooter.vue";
 import TheNavbar from "../components/TheNavbar.vue";
+import TheNavigate from "../components/TheNavigate.vue";
 </script>
 
 <style lang="scss" scoped></style>

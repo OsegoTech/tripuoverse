@@ -3,11 +3,11 @@ import Login from "../Views/Login.vue";
 import HomePage from "../Views/HomePage.vue";
 import Register from "../Views/Register.vue";
 import UserNavigation from "../Views/UserNavigation.vue";
-import LoginRegister from "../Views/LoginRegister.vue";
 import CreateProduct from "../components/CreateProduct.vue";
 import ProductView from "../Views/ProductsView.vue";
 import ServicesView from "../Views/ServicesView.vue";
 import ContactView from "../Views/ContactView.vue";
+import LoginView from "../Views/LoginView.vue";
 import store from "../store/index.js";
 
 const routes = [
@@ -25,6 +25,11 @@ const routes = [
     component: Login,
   },
   {
+    path: "/login-view",
+    name: "login-view", 
+    component: LoginView,
+  },
+  {
     path: "/register",
     name: "Register",
     meta: {
@@ -37,11 +42,7 @@ const routes = [
     name: "UserNavigation",
     component: UserNavigation,
   },
-  {
-    path: "/auth",
-    name: "Auth",
-    component: LoginRegister,
-  },
+  
   {
     path: "/create-product",
     name: "CreateProduct",

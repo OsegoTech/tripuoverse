@@ -8,6 +8,7 @@ const store = createStore({
     mutations,
     actions,
     getters: {
+        isLoggedIn: state => !!state.user.token,    // !! converts to boolean
        currentUser: state => state.user.data,
     },
 })

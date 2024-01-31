@@ -1,16 +1,19 @@
 import axiosClient from "../axios.js";
 
 export function login({ commit }, data) {
-  return axiosClient.post("/users/login", data).then(({ data }) => {
-    commit("setUser", data.user);
+  return axiosClient.post("/auth/login", data).then(({ data }) => {
+    console.log("user data", data);
+    console.log("user data", data.data.user);
+    commit("setUser", data.data.user);
     commit("setToken", data.token);
   });
 }
 
 export function register({ commit }, data) {
-  return axiosClient.post("/users/signup", data).then(({ data }) => {
+  return axiosClient.post("/auth/signup", data).then(({ data }) => {
     console.log("user data", data);
-    commit("setUser", data.user);
+    console.log("user data", data.data);
+    commit("setUser", data.data.user);
     commit("setToken", data.token);
   });
 }

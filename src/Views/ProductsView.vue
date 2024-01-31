@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TheNavbar />
+    <TheNavigate />
     <div>
       <div>
         <div
@@ -31,6 +31,7 @@ import ProductCardVue from "../components/ProductCard.vue";
 import store from "../store/index.js";
 import TheNavbar from "../components/TheNavbar.vue";
 import TheFooter from "../components/TheFooter.vue";
+import TheNavigate from "../components/TheNavigate.vue";
 
 const products = computed(() => store.state.products);
 const loading = computed(() => store.state.loading);
