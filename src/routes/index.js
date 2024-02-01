@@ -8,8 +8,8 @@ import ProductView from "../Views/ProductsView.vue";
 import ServicesView from "../Views/ServicesView.vue";
 import ContactView from "../Views/ContactView.vue";
 import LoginView from "../Views/LoginView.vue";
+import Dashboard from "../components/Dashboard/Dashboard.vue";
 import store from "../store/index.js";
-import { computed } from "vue";
 
 const routes = [
   {
@@ -49,12 +49,6 @@ const routes = [
     name: "UserNavigation",
     component: UserNavigation,
   },
-
-  {
-    path: "/create-product",
-    name: "CreateProduct",
-    component: CreateProduct,
-  },
   {
     path: "/products",
     name: "Product",
@@ -75,6 +69,24 @@ const routes = [
     name: "Contact",
     component: ContactView,
   },
+
+  // dashboard
+  {
+    path: "/app",
+    name: "app",
+    meta: {
+      requiresAuth: true,
+    },
+    component: Dashboard,
+    children: [
+      {
+        path: "/dashboard",
+        name: "app.dashboard",
+        component: CreateProduct
+      }
+    ]
+  },
+
   {
     path: "/:pathMatch(.*)*",
     name: "NotFound",
