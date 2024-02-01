@@ -2,7 +2,7 @@ const state = {
   loading: false,
   user: {
     data: {},
-    token: sessionStorage.getItem("TOKEN") || null,
+    token: localStorage.getItem("TOKEN"),
   },
   service: {},
   products: [],

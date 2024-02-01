@@ -5,6 +5,7 @@ export function login({ commit }, data) {
     console.log("user data", data);
     console.log("user data", data.data.user);
     commit("setUser", data.data.user);
+    console.log("user token", data.token);
     commit("setToken", data.token);
   });
 }
@@ -19,7 +20,7 @@ export function register({ commit }, data) {
 }
 
 export function logout({ commit }) {
-  commit("setUser", {});
+  commit("setUser", null);
   commit("setToken", null);
 }
 

@@ -14,7 +14,7 @@
             alt="Flowbite Logo"
           /> -->
           <span
-            class="self-center  font-semibold whitespace-nowrap dark:text-white text-blue-700 font-mono text-2xl"
+            class="self-center font-semibold whitespace-nowrap dark:text-white text-blue-700 font-mono text-2xl"
             >TripuoVerse</span
           >
         </RouterLink>
@@ -75,10 +75,11 @@
                 >
               </li>
               <li>
-                <a
-                  href="#"
+                <RouterLink
+                to="/login"
+                  @click="logout"
                   class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                  >Sign out</a
+                  >Sign out</RouterLink
                 >
               </li>
             </ul>
@@ -145,15 +146,15 @@
               >
             </li>
             <li>
-              <a
-                href="#"
+              <RouterLink
+                to="/contact"
                 class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                >Contact</a
+                >Contact</RouterLink
               >
             </li>
             <li v-if="!authorized">
               <RouterLink
-                to="/login-view"
+                to="/login"
                 class="block bg-blue-600 p-1 text-white rounded hover:bg-blue-600 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                 >Login</RouterLink
               >
@@ -184,6 +185,10 @@ const email = ref(user.email);
 console.log(email);
 const name = ref(user.firstName);
 console.log(name);
+
+const logout = () => {
+  store.dispatch("logout");
+};
 </script>
 
 <style lang="scss" scoped></style>

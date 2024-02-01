@@ -9,24 +9,31 @@ import ServicesView from "../Views/ServicesView.vue";
 import ContactView from "../Views/ContactView.vue";
 import LoginView from "../Views/LoginView.vue";
 import store from "../store/index.js";
+import { computed } from "vue";
 
 const routes = [
   {
     path: "/",
     name: "Home",
     component: HomePage,
+    meta: {
+      requiresAuth: true,
+    },
   },
   {
-    path: "/login",
-    name: "Login",
+    path: "/login-view",
+    name: "login-view",
     meta: {
       requiresGuest: true,
     },
     component: Login,
   },
   {
-    path: "/login-view",
-    name: "login-view", 
+    path: "/login",
+    name: "login",
+    meta: {
+      requiresGuest: true,
+    },
     component: LoginView,
   },
   {
@@ -42,7 +49,7 @@ const routes = [
     name: "UserNavigation",
     component: UserNavigation,
   },
-  
+
   {
     path: "/create-product",
     name: "CreateProduct",
@@ -82,9 +89,8 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   if (to.meta.requiresAuth && !store.state.user.token) {
-    next({ name: "Login" });
+    next({ name: "login" });
   } else if (to.meta.requiresGuest && store.state.user.token) {
-    console.log("user token", store.state.user.token);
     next({ name: "Home" });
   } else {
     next();
