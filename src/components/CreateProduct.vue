@@ -138,7 +138,7 @@
                   fill="currentColor"
                 />
               </svg>
-              Hang on...
+              Loading...
             </button>
             <button
               v-else
@@ -171,7 +171,7 @@ import { onMounted, ref } from "vue";
 import { initModals } from "flowbite";
 import store from "../store/index.js";
 
-const loading = ref(false);
+let loading = ref(false);
 let errorMsg = ref(null);
 
 onMounted(() => {
