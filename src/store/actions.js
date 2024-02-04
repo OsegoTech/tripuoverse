@@ -73,9 +73,9 @@ export async function fetchProducts({ commit }) {
   } finally {
     commit("SET_LOADING", false);
   }
-//   return axiosClient.get("/products").then(({ data }) => {
-//     commit("setProducts", data);
-//   });
+  //   return axiosClient.get("/products").then(({ data }) => {
+  //     commit("setProducts", data);
+  //   });
 }
 
 export function createProduct({ commit }, data) {
