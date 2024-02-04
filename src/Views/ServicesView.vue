@@ -10,7 +10,7 @@
             <ServiceCard
               :name="service.name"
               :price="service.price"
-              :description="service.description.substring(0, 100) + '...'"
+              :description="service.description.substring(0, 30) + '...'"
               :image="service.image"
               seller="John Doe"
             />

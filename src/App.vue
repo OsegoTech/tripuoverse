@@ -13,10 +13,10 @@
 <style scoped>
 .page-leave-to {
   opacity: 0;
-  transform: translateX(-50px);
+  transform: translateY(-30px);
 }
 .page-leave-active {
-  transition: all 0.4s ease-in;
+  transition: all 0.2s ease-in;
 }
 .page-enter-from {
   opacity: 0;

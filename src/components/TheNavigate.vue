@@ -55,7 +55,7 @@
             <ul class="py-2" aria-labelledby="user-menu-button">
               <li>
                 <RouterLink
-                  to="/app"
+                  to="/sellerview"
                   class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                   >Dashboard</RouterLink
                 >
@@ -169,7 +169,7 @@
 <script setup>
 import store from "../store/index.js";
 import { initFlowbite } from "flowbite";
-import { onMounted } from "vue";
+import { computed, onMounted } from "vue";
 import { ref } from "vue";
 import { RouterLink } from "vue-router";
 
@@ -183,6 +183,7 @@ const authorized = store.getters.isLoggedIn;
 console.log(authorized);
 console.log(user);
 const email = ref(user.email);
+
 console.log(email);
 const name = ref(user.firstName);
 console.log(name);

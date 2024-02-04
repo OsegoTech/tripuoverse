@@ -9,6 +9,7 @@ import ServicesView from "../Views/ServicesView.vue";
 import ContactView from "../Views/ContactView.vue";
 import LoginView from "../Views/LoginView.vue";
 import Dashboard from "../components/Dashboard/Dashboard.vue";
+import UserDashboard from "../components/Dashboard/UserDashboard.vue";
 import store from "../store/index.js";
 
 const routes = [
@@ -69,6 +70,11 @@ const routes = [
     name: "Contact",
     component: ContactView,
   },
+  {
+    path: "/sellerview",
+    name: "seller-view",
+    component: UserDashboard,
+  },
 
   // dashboard
   {
@@ -82,9 +88,9 @@ const routes = [
       {
         path: "/dashboard",
         name: "app.dashboard",
-        component: CreateProduct
-      }
-    ]
+        component: CreateProduct,
+      },
+    ],
   },
 
   {
