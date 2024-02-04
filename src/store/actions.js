@@ -87,7 +87,7 @@ export function createProduct({ commit }, data) {
 
 export function updateProduct({ commit }, data) {
   return axiosClient.put(`/products/${data.id}`, data).then(({ data }) => {
-    commit("setProducts", data);
+    commit("SET_PRODUCTS", data);
   });
 }
 
