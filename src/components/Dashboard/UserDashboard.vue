@@ -117,15 +117,16 @@
         </div>
       </div>
     </div>
-    <CreateProduct />
     <CreateService />
+    <CreateProduct />
     <TheFooter />
   </div>
 </template>
 
 <script setup>
-import CreateProduct from "../CreateProduct.vue";
+
 import CreateService from "../CreateService.vue";
+import CreateProduct from "../CreateProduct.vue";
 import TheFooter from "../TheFooter.vue";
 import TheNavigate from "../TheNavigate.vue";
 import { onMounted, ref } from "vue";

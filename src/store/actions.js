@@ -80,6 +80,7 @@ export async function fetchProducts({ commit }) {
 
 export function createProduct({ commit }, data) {
   return axiosClient.post("/products", data).then(({ data }) => {
+    console.log(data);
     commit("setProducts", data);
   });
 }
