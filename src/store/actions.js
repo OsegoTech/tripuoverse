@@ -81,13 +81,13 @@ export async function fetchProducts({ commit }) {
 export function createProduct({ commit }, data) {
   return axiosClient.post("/products", data).then(({ data }) => {
     console.log(data);
-    commit("setProducts", data);
+    commit("SET_PRODUCTS", data);
   });
 }
 
 export function updateProduct({ commit }, data) {
   return axiosClient.put(`/products/${data.id}`, data).then(({ data }) => {
-    commit("SET_PRODUCTS", data);
+    commit("setProducts", data);
   });
 }
 

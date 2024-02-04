@@ -193,7 +193,7 @@ const handleSubmit = async () => {
 
   // create form data object to handle upload
   const formData = new FormData();
-  formData.append("name", product.value.title);
+  formData.append("title", product.value.title);
   formData.append("price", product.value.price);
   formData.append("category", product.value.category);
   formData.append("description", product.value.description);
