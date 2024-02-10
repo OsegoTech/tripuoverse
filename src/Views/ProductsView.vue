@@ -10,9 +10,9 @@
           <!-- <div v-else-if="productsCount == 0">No products</div> -->
           <div v-else v-for="product in products" :key="product.id">
             <ProductCardVue
-              :name="product.name"
+              :name="product.title"
               :price="product.price"
-              :description="product.description"
+              :description="product.description.substring(0, 30) + '...'"
               :image="product.image"
               seller="John Doe"
               :date="product.date"
@@ -29,7 +29,6 @@
 import { computed, onMounted } from "vue";
 import ProductCardVue from "../components/ProductCard.vue";
 import store from "../store/index.js";
-import TheNavbar from "../components/TheNavbar.vue";
 import TheFooter from "../components/TheFooter.vue";
 import TheNavigate from "../components/TheNavigate.vue";
 

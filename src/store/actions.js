@@ -2,6 +2,7 @@ import axiosClient from "../axios.js";
 import { useToast } from "vue-toastification";
 const toast = useToast();
 
+//     AUTHENTICATION
 export function login({ commit }, data) {
   return axiosClient.post("/auth/login", data).then(({ data }) => {
     console.log("user data", data);
@@ -27,6 +28,7 @@ export function logout({ commit }) {
   toast.success("Logged out successfully");
 }
 
+//    SERVICES
 export function getServices({ commit }) {
   return axiosClient.get("/services").then(({ data }) => {
     commit("setProducts", data);
@@ -51,16 +53,12 @@ export function deleteService({ commit }, id) {
   });
 }
 
-export function getCategories({ commit }) {
-  return axiosClient.get("/categories").then(({ data }) => {
-    commit("setCategories", data);
+export function latestServices({commit}){
+  return axiosClient.get("/services/latest-services").then(({ data }) => {
+    console.log("latest services", data);
+    commit("SET_LATEST_SERVICES", data);
   });
-}
 
-export function createCategory({ commit }, data) {
-  return axiosClient.post("/categories", data).then(({ data }) => {
-    commit("setCategories", data);
-  });
 }
 
 // products
@@ -76,9 +74,20 @@ export async function fetchProducts({ commit }) {
   } finally {
     commit("SET_LOADING", false);
   }
-  //   return axiosClient.get("/products").then(({ data }) => {
-  //     commit("setProducts", data);
-  //   });
+}
+
+export async function latestProducts({ commit }) {
+  commit("SET_LOADING", true);
+  try {
+    const response = await axiosClient.get("/products/latest-products");
+    let products = response.data;
+    console.log("response", products);
+    commit("SET_LATEST_PRODUCTS", products);
+  } catch (error) {
+    console.log("Error fetching products", error);
+  } finally {
+    commit("SET_LOADING", false);
+  }
 }
 
 export function createProduct({ commit }, data) {
@@ -98,5 +107,18 @@ export function updateProduct({ commit }, data) {
 export function deleteProduct({ commit }, id) {
   return axiosClient.delete(`/products/${id}`).then(({ data }) => {
     commit("setProducts", data);
+  });
+}
+
+// CATEGORIES
+export function getCategories({ commit }) {
+  return axiosClient.get("/categories").then(({ data }) => {
+    commit("setCategories", data);
+  });
+}
+
+export function createCategory({ commit }, data) {
+  return axiosClient.post("/categories", data).then(({ data }) => {
+    commit("setCategories", data);
   });
 }

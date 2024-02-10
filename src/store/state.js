@@ -6,6 +6,8 @@ const state = {
   },
   service: {},
   products: [],
+  latestproducts: [],
+  latestServices: [],
   
 };
 

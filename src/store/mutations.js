@@ -25,6 +25,10 @@ export function setServices(state, service) {
   state.service = service;
 }
 
+export function SET_LATEST_SERVICES(state, services) {
+  state.latestServices = services;
+}
+
 // PRODUCT MUTATIONS
 export function SET_PRODUCTS(state, products) {
   state.products = products;
@@ -38,4 +42,9 @@ export function SET_PRODUCTS(state, products) {
 
 export function setCategories(state, category) {
   state.category = category;
+}
+
+// PRODUCTS
+export function SET_LATEST_PRODUCTS(state, products) {
+  state.latestproducts = products;
 }

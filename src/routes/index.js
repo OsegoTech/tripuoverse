@@ -62,6 +62,7 @@ const routes = [
     name: "Product2",
     component: ProductView,
   },
+  
   {
     path: "/services",
     name: "Services",
