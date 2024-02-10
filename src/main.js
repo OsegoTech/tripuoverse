@@ -1,6 +1,9 @@
 import { createApp } from "vue";
 import { createPinia } from "pinia";
 import PrimeVue from "primevue/config";
+import Toast from "vue-toastification";
+
+import "vue-toastification/dist/index.css";
 
 import "./style.css";
 import App from "./App.vue";
@@ -26,6 +29,20 @@ const pinia = createPinia();
 app.use(router);
 app.use(pinia);
 app.use(PrimeVue);
+app.use(Toast, {
+  position: "top-right",
+  timeout: 3000,
+  closeOnClick: true,
+  pauseOnFocusLoss: true,
+  pauseOnHover: true,
+  draggable: true,
+  draggablePercent: 0.6,
+  showCloseButtonOnHover: false,
+  hideProgressBar: false,
+  closeButton: false,
+  icon: true,
+  rtl: false,
+});
 
 
 // primevue components

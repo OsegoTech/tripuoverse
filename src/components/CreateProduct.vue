@@ -200,6 +200,11 @@ const handleSubmit = async () => {
   formData.append("image", product.value.image);
   try {
     await store.dispatch("createProduct", formData);
+    const modalElement = document.getElementById("create-product-modal");
+    if (modalElement) {
+      modalElement.classList.add("hidden");
+    }
+
   } catch (error) {
     errorMsg.value = error.message;
   } finally {

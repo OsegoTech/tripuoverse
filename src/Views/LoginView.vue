@@ -69,7 +69,6 @@
                       aria-describedby="remember"
                       type="checkbox"
                       class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
-                      
                     />
                   </div>
                   <div class="ml-3 text-sm">
@@ -80,15 +79,15 @@
                     >
                   </div>
                 </div>
-                <a
-                  href="#"
+                <RouterLink
+                  to="/forgot-password"
                   class="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"
-                  >Forgot password?</a
+                  >Forgot password?</RouterLink
                 >
               </div>
               <div>
                 <button
-                v-if="loading"
+                  v-if="loading"
                   disabled
                   type="button"
                   class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
@@ -114,14 +113,14 @@
                 </button>
                 <!-- sign in -->
                 <button
-                v-else
-                type="submit"
-                class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-              >
-                Sign in
-              </button>
+                  v-else
+                  type="submit"
+                  class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                >
+                  Sign in
+                </button>
               </div>
-              
+
               <p class="text-sm font-light text-gray-500 dark:text-gray-400">
                 Don’t have an account yet?
                 <RouterLink
@@ -142,6 +141,9 @@
 import { ref } from "vue";
 import store from "../store/index.js";
 import router from "../routes/index.js";
+import {useToast} from "vue-toastification";
+
+const toast = useToast();
 
 let loading = ref(false);
 let errorMsg = ref("");
@@ -157,9 +159,14 @@ const login = async () => {
 
   try {
     await store.dispatch("login", user);
+    toast.info("Logged in successfully", {
+      timeout: 2000,
+      position: "top-right",
+      containerClasses: ["bg-primary-600", "text-white"],
+    }); 
     router.push({ name: "Home" });
   } catch (error) {
-    errorMsg.value = error.response.data.message;
+    console.log(error);
   } finally {
     loading.value = false;
   }

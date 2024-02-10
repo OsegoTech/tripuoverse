@@ -1,4 +1,6 @@
 import axiosClient from "../axios.js";
+import { useToast } from "vue-toastification";
+const toast = useToast();
 
 export function login({ commit }, data) {
   return axiosClient.post("/auth/login", data).then(({ data }) => {
@@ -22,6 +24,7 @@ export function register({ commit }, data) {
 export function logout({ commit }) {
   commit("setUser", null);
   commit("setToken", null);
+  toast.success("Logged out successfully");
 }
 
 export function getServices({ commit }) {
@@ -82,6 +85,7 @@ export function createProduct({ commit }, data) {
   return axiosClient.post("/products", data).then(({ data }) => {
     console.log(data);
     commit("SET_PRODUCTS", data);
+    toast.success("Product  Added");
   });
 }
 

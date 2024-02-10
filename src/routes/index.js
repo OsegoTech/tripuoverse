@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Login from "../Views/Login.vue";
 import HomePage from "../Views/HomePage.vue";
 import Register from "../Views/Register.vue";
 import UserNavigation from "../Views/UserNavigation.vue";
@@ -18,17 +17,10 @@ const routes = [
     name: "Home",
     component: HomePage,
     meta: {
-      requiresAuth: true,
+      requiresAuth: false,
     },
   },
-  {
-    path: "/login-view",
-    name: "login-view",
-    meta: {
-      requiresGuest: true,
-    },
-    component: Login,
-  },
+
   {
     path: "/login",
     name: "login",
@@ -44,6 +36,16 @@ const routes = [
       requiresGuest: true,
     },
     component: Register,
+  },
+  {
+    path: "/forgot-password",
+    name: "ForgotPassword",
+    component: () => import("../Views/ForgotPassword.vue"),
+  },
+  {
+    path: "/reset-password",
+    name: "ResetPassword",
+    component: () => import("../Views/ResetPassword.vue"),
   },
   {
     path: "/user-navigation",
