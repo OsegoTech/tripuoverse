@@ -6,7 +6,17 @@
     <div>
       <div class="bg-gray-900 py-16">
         <div class="container mx-auto px-4">
-          <h2 class="text-3xl font-bold text-white mb-8">Featured Products</h2>
+          <div class="flex justify-between items-center">
+            <h2 class="text-3xl font-bold text-white mb-8">
+              Featured Products
+            </h2>
+            <RouterLink
+              to="/services"
+              class="text-3xl font-bold text-white mb-8"
+            >
+              All Products</RouterLink
+            >
+          </div>
           <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
             <NewProductCard
               v-for="product in products"
@@ -27,8 +37,12 @@
         <div class="container mx-auto px-4">
           <div class="flex justify-between items-center">
             <h2 class="text-3xl font-bold text-white mb-8">Latest Services</h2>
-            <RouterLink to="/services" class="text-3xl font-bold text-white mb-8"> All services</RouterLink>
-
+            <RouterLink
+              to="/services"
+              class="text-3xl font-bold text-white mb-8"
+            >
+              All services</RouterLink
+            >
           </div>
           <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
             <NewProductCard
