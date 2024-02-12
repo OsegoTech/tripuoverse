@@ -8,41 +8,54 @@
             <div class="h-[460px] rounded-lg bg-gray-300 dark:bg-gray-700 mb-4">
               <img
                 class="w-full h-full object-cover"
-                src="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg"
-                alt="Product Image"
+                :src="service.image"
+                :alt="service.name"
               />
             </div>
-            <div class="flex -mx-2 mb-4">
+            <div class="flex -mx-2 mb-4 justify-between items-center">
               <div class="w-1/2 px-2">
-                <button
-                  class="w-full bg-gray-900 dark:bg-gray-600 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-700"
+                <RouterLink
+                  to="/services"
+                  class="w-full bg-blue-600 dark:bg-blue-700 text-white dark:text-white py-2 px-4 rounded-full font-bold hover:bg-blue-900 dark:hover:bg-gray-600"
                 >
-                  Add to Cart
-                </button>
+                  Back to Services
+                </RouterLink>
               </div>
-              <div class="w-1/2 px-2">
-                <button
-                  class="w-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white py-2 px-4 rounded-full font-bold hover:bg-gray-300 dark:hover:bg-gray-600"
+              <div>
+                <a
+                  :href="
+                    'https://wa.me/' +
+                    encodeURIComponent(service.provider.whatsApp) +
+                    '?text=Hello%20' +
+                    encodeURIComponent(service.provider.firstName) +
+                    '%20I%20am%20interested%20in%20your%20' +
+                    encodeURIComponent(service.name) +
+                    ' service%20'
+                  "
+                  class="w-full bg-blue-600 dark:bg-blue-700 text-white dark:text-white py-2 px-4 rounded-full font-bold hover:bg-blue-900 dark:hover:bg-gray-600"
                 >
-                  Add to Wishlist
-                </button>
+                  Contact Provider
+                </a>
               </div>
             </div>
           </div>
           <div class="md:flex-1 px-4">
-            <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">
-              Product Name
+            <h2
+              class="w-full bg-blue-600 dark:bg-blue-700 text-white dark:text-white py-2 px-4 rounded-full font-bold hover:bg-blue-900 dark:hover:bg-gray-600"
+            >
+              {{ service.name }}
             </h2>
             <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed
-              ante justo. Integer euismod libero id mauris malesuada tincidunt.
+              {{ service.name }}
             </p>
             <div class="flex mb-4">
               <div class="mr-4">
                 <span class="font-bold text-gray-700 dark:text-gray-300"
                   >Price:</span
                 >
-                <span class="text-gray-600 dark:text-gray-300">$29.99</span>
+                <span class="text-gray-600 dark:text-gray-300"
+                  >Kes {{ service.price }}</span
+                >
               </div>
               <div>
                 <span class="font-bold text-gray-700 dark:text-gray-300"
@@ -51,70 +64,13 @@
                 <span class="text-gray-600 dark:text-gray-300">In Stock</span>
               </div>
             </div>
-            <div class="mb-4">
-              <span class="font-bold text-gray-700 dark:text-gray-300"
-                >Select Color:</span
-              >
-              <div class="flex items-center mt-2">
-                <button
-                  class="w-6 h-6 rounded-full bg-gray-800 dark:bg-gray-200 mr-2"
-                ></button>
-                <button
-                  class="w-6 h-6 rounded-full bg-red-500 dark:bg-red-700 mr-2"
-                ></button>
-                <button
-                  class="w-6 h-6 rounded-full bg-blue-500 dark:bg-blue-700 mr-2"
-                ></button>
-                <button
-                  class="w-6 h-6 rounded-full bg-yellow-500 dark:bg-yellow-700 mr-2"
-                ></button>
-              </div>
-            </div>
-            <div class="mb-4">
-              <span class="font-bold text-gray-700 dark:text-gray-300"
-                >Select Size:</span
-              >
-              <div class="flex items-center mt-2">
-                <button
-                  class="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400 dark:hover:bg-gray-600"
-                >
-                  S
-                </button>
-                <button
-                  class="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400 dark:hover:bg-gray-600"
-                >
-                  M
-                </button>
-                <button
-                  class="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400 dark:hover:bg-gray-600"
-                >
-                  L
-                </button>
-                <button
-                  class="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400 dark:hover:bg-gray-600"
-                >
-                  XL
-                </button>
-                <button
-                  class="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400 dark:hover:bg-gray-600"
-                >
-                  XXL
-                </button>
-              </div>
-            </div>
+
             <div>
               <span class="font-bold text-gray-700 dark:text-gray-300"
-                >Product Description:</span
+                >Service Description:</span
               >
               <p class="text-gray-600 dark:text-gray-300 text-sm mt-2">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed
-                ante justo. Integer euismod libero id mauris malesuada
-                tincidunt. Vivamus commodo nulla ut lorem rhoncus aliquet. Duis
-                dapibus augue vel ipsum pretium, et venenatis sem blandit.
-                Quisque ut erat vitae nisi ultrices placerat non eget velit.
-                Integer ornare mi sed ipsum lacinia, non sagittis mauris
-                blandit. Morbi fermentum libero vel nisl suscipit, nec tincidunt
-                mi consectetur.
+                {{ service.description }}
               </p>
             </div>
           </div>
@@ -126,8 +82,23 @@
 </template>
 
 <script setup>
-import TheFooter from '../components/TheFooter.vue';
-import TheNavigate from '../components/TheNavigate.vue';
+import TheFooter from "../components/TheFooter.vue";
+import TheNavigate from "../components/TheNavigate.vue";
+import { useRoute } from "vue-router";
+import { computed, onBeforeMount, ref } from "vue";
+import store from "../store/index.js";
+
+const route = useRoute();
+
+const serviceId = ref(route.params.serviceId);
+console.log(serviceId.value);
+
+onBeforeMount(() => {
+  store.dispatch("getService", serviceId.value);
+});
+
+const service = computed(() => store.state.service);
+console.log(service.value);
 </script>
 
 <style lang="scss" scoped></style>

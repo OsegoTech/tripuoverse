@@ -2,18 +2,20 @@
   <div>
     <TheNavigate />
     <div>
-      <div class="flex justify-center">
+      <div >
         <div
-          class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-2 lg:py-3 px-3 lg:max-w-[1200px]"
+        class="bg-gray-100 mx-auto max-w-[1200px] px-3 py-3 mb-3 rounded-md gap-3 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4"
         >
-          <div v-for="service in services">
+        <div v-if="loading">Fetching Services...</div>
+          <div v-else v-for="service in services">
             <ServiceCard
-              :name="service.name"
+              :name="service.name.substring(0, 17) + '...'"
               :price="service.price"
-              :description="service.description.substring(0, 30) + '...'"
+              :description="service.description.substring(0, 25) + '...'"
               :image="service.image"
               :seller="service.provider.firstName"
               :whatsApp="service.provider.whatsApp"
+              :id="service._id"
             />
           </div>
         </div>
@@ -24,36 +26,28 @@
 </template>
 
 <script setup>
-import {  onBeforeMount } from "vue";
+import {  onBeforeMount, onMounted } from "vue";
 import ServiceCard from "../components/ServiceCard.vue";
 import { useServiceStore } from "../store/servicesStore.js";
 import { storeToRefs } from "pinia";
-import store from "../store/index.js";
 import TheFooter from "../components/TheFooter.vue";
 import TheNavigate from "../components/TheNavigate.vue";
-import axiosClient from "../axios.js";
 const servicesOffered = useServiceStore();
-const { services, loading, error } = storeToRefs(servicesOffered);
+const { services  } = storeToRefs(servicesOffered);
 console.log(services);
 const { fetchServices } = servicesOffered;
 
-const fetchSeller = (sellerId) => {
-    axiosClient
-      .get(`/users/${sellerId}`)
-      .then((response) => {
-        console.log(response.data);
-        const seller = response.data.firstName;
-        console.log(seller);
-        return seller;
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-};
+
 
 onBeforeMount(() => {
   fetchServices();
 });
+
+onMounted(() => {
+  console.log(services);
+});
+
+
 
 
 

@@ -76,7 +76,7 @@
               </li>
               <li>
                 <RouterLink
-                to="/login"
+                  to="/login"
                   @click="logout"
                   class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                   >Sign out</RouterLink
@@ -179,6 +179,7 @@ onMounted(() => {
 
 // get the isloggedin getter from store
 const user = store.getters.currentUser;
+// const user = computed(() => store.getters.currentUser);
 const authorized = store.getters.isLoggedIn;
 console.log(authorized);
 console.log(user);

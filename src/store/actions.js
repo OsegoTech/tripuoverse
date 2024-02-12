@@ -41,6 +41,12 @@ export function getServices({ commit }) {
   });
 }
 
+export function getService({ commit }, id) {
+  return axiosClient.get(`/services/${id}`).then(({ data }) => {
+    commit("SET_SERVICE", data);
+  });
+}
+
 export function createService({ commit }, data) {
   return axiosClient.post("/services", data).then(({ data }) => {
     commit("SET_SERVICE", data);
@@ -113,6 +119,14 @@ export function deleteProduct({ commit }, id) {
   return axiosClient.delete(`/products/${id}`).then(({ data }) => {
     commit("setProducts", data);
   });
+}
+
+export function fetchProduct({commit}, id) {
+  return axiosClient.get(`/products/${id}`).then(({ data }) => {
+    console.log("product data", data);
+    commit("SET_PRODUCT", data);
+  });
+
 }
 
 // CATEGORIES

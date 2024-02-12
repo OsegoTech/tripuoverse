@@ -5,7 +5,9 @@ const state = {
     token: localStorage.getItem("TOKEN"),
   },
   services: [],
+  service: {},
   products: [],
+  product: {},
   latestproducts: [],
   latestServices: [],
   

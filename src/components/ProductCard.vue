@@ -13,10 +13,14 @@
           <p
             class="block font-sans text-base font-medium leading-relaxed text-blue-gray-900 antialiased"
           >
-            {{ name }}
+            <RouterLink
+              :to="`/products/${id}`"
+              class="block font-serif font-bold leading-relaxed text-blue-900 antialiased"
+              >{{ name }}</RouterLink
+            >
           </p>
           <p
-            class="block font-sans text-base font-medium leading-relaxed text-white antialiased bg-blue-600 py-1 px-2 rounded-md"
+            class="block font-serif  text-base font-medium leading-relaxed text-black antialiased py-1 px-2 rounded-md"
           >
             Kes {{ price }}
           </p>
@@ -27,8 +31,9 @@
           {{ description }}
         </p>
       </div>
-      <div class="p-3 pt-0 flex justify-between items-center">
-        <span class="font-bold font-mono">{{ seller }}</span>
+      <div class="p-3 mx-2 my-2 rounded-md bg-gray-100 flex justify-between items-center">
+        <span class="font-bold text-black font-sans">{{ seller }}</span>
+
         <a
           :href="
             'https://wa.me/' +
@@ -56,6 +61,7 @@ const props = defineProps({
   seller: String,
   date: String,
   whatsApp: String,
+  id: String,
 });
 </script>
 

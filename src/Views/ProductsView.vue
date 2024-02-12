@@ -17,6 +17,7 @@
               :seller="product.seller.firstName"
               :whatsApp="product.seller.whatsApp"
               :date="product.date"
+              :id="product._id"
             />
           </div>
         </div>
@@ -44,14 +45,11 @@ onMounted(async () => {
   store.dispatch("fetchProducts");
 });
 
-const goToProductsDetail = (productId) => {
-  console.log(`goToProductsDetail: ${id}`);
-  router.push({ path: `/products/${productId}` });
-};
 
-const getImageUrl = (image) => {
-  return `http://localhost:5000/public/productImages/${image}`;
-};
+
+// const getImageUrl = (image) => {
+//   return `http://localhost:5000/public/productImages/${image}`;
+// };
 </script>
 
 <style scoped></style>
