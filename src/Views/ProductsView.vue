@@ -10,11 +10,12 @@
           <!-- <div v-else-if="productsCount == 0">No products</div> -->
           <div v-else v-for="product in products" :key="product.id">
             <ProductCardVue
-              :name="product.title"
+              :name="product.title.substring(0, 17) + '...'"
               :price="product.price"
-              :description="product.description.substring(0, 30) + '...'"
+              :description="product.description.substring(0, 25) + '...'"
               :image="product.image"
-              seller="John Doe"
+              :seller="product.seller.firstName"
+              :whatsApp="product.seller.whatsApp"
               :date="product.date"
             />
           </div>
@@ -42,6 +43,11 @@ console.log(products.value);
 onMounted(async () => {
   store.dispatch("fetchProducts");
 });
+
+const goToProductsDetail = (productId) => {
+  console.log(`goToProductsDetail: ${id}`);
+  router.push({ path: `/products/${productId}` });
+};
 
 const getImageUrl = (image) => {
   return `http://localhost:5000/public/productImages/${image}`;

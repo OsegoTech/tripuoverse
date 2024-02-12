@@ -27,8 +27,21 @@
           {{ description }}
         </p>
       </div>
-      <div class="p-3 pt-0">
-        <Button label="Contact Seller"> </Button>
+      <div class="p-3 pt-0 flex justify-between items-center">
+        <span class="font-bold font-mono">{{ seller }}</span>
+        <a
+          :href="
+            'https://wa.me/' +
+            encodeURIComponent(whatsApp) +
+            '?text=Hello%20' +
+            encodeURIComponent(seller) +
+            '%20I%20am%20interested%20in%20your%20' +
+            encodeURIComponent(name) +
+            ' Item%20'
+          "
+          class="text-white hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-1 text-center dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          ><i class="fa-brands fa-whatsapp fa-2xl" style="color: #04d212"></i
+        ></a>
       </div>
     </div>
   </div>
@@ -42,6 +55,7 @@ const props = defineProps({
   image: String,
   seller: String,
   date: String,
+  whatsApp: String,
 });
 </script>
 

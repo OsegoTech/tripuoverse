@@ -28,37 +28,42 @@ export function logout({ commit }) {
   toast.success("Logged out successfully");
 }
 
+export function getUser({ commit }) {
+  return axiosClient.get(`/user/${id}`).then(({ data }) => {
+    commit("setUser", data);
+  });
+}
+
 //    SERVICES
 export function getServices({ commit }) {
   return axiosClient.get("/services").then(({ data }) => {
-    commit("setProducts", data);
+    commit("SET_SERVICES", data);
   });
 }
 
 export function createService({ commit }, data) {
   return axiosClient.post("/services", data).then(({ data }) => {
-    commit("setServices", data);
+    commit("SET_SERVICE", data);
   });
 }
 
 export function updateService({ commit }, data) {
   return axiosClient.put(`/services/${data.id}`, data).then(({ data }) => {
-    commit("setServices", data);
+    commit("SET_SERVICE", data);
   });
 }
 
 export function deleteService({ commit }, id) {
   return axiosClient.delete(`/services/${id}`).then(({ data }) => {
-    commit("setServices", data);
+    commit("SET_SERVICE", data);
   });
 }
 
-export function latestServices({commit}){
+export function latestServices({ commit }) {
   return axiosClient.get("/services/latest-services").then(({ data }) => {
     console.log("latest services", data);
     commit("SET_LATEST_SERVICES", data);
   });
-
 }
 
 // products

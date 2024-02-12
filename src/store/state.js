@@ -4,7 +4,7 @@ const state = {
     data: {},
     token: localStorage.getItem("TOKEN"),
   },
-  service: {},
+  services: [],
   products: [],
   latestproducts: [],
   latestServices: [],

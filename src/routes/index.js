@@ -58,9 +58,9 @@ const routes = [
     component: ProductView,
   },
   {
-    path: "/products/:id",
-    name: "Product2",
-    component: ProductView,
+    path: "/products/:productId",
+    name: "ProductDetails",
+    component: import("../Views/ProductDetail.vue"),
   },
   
   {
@@ -69,9 +69,19 @@ const routes = [
     component: ServicesView,
   },
   {
+    path: "/services/:serviceId",
+    name: "ServiceDetails",
+    component: import("../Views/ServiceDetail.vue"),
+  },
+  {
     path: "/contact",
     name: "Contact",
     component: ContactView,
+  },
+  {
+    path: "/about",
+    name: "About",
+    component: () => import("../Views/AboutView.vue"),
   },
   {
     path: "/sellerview",
