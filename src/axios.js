@@ -6,8 +6,8 @@ const url = `${import.meta.env.VITE_API_BASE_URL}/api`;
 console.log(url);
 
 const axiosClient = axios.create({
-    // baseURL: "https://tripuoverse.azurewebsites.net/api",
-    baseURL: `${import.meta.env.VITE_API_BASE_URL}/api`,
+    baseURL: "https://tripuoverse.azurewebsites.net/api",
+    // baseURL: `${import.meta.env.VITE_API_BASE_URL}/api`,
 });
 console.log(url);
 
