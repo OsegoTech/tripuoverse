@@ -60,7 +60,7 @@ const routes = [
   {
     path: "/products/:productId",
     name: "ProductDetails",
-    component: import("../Views/ProductDetail.vue"),
+    component:() => import("../Views/ProductDetail.vue"),
   },
   
   {
@@ -71,7 +71,7 @@ const routes = [
   {
     path: "/services/:serviceId",
     name: "ServiceDetails",
-    component: import("../Views/ServiceDetail.vue"),
+    component:() => import("../Views/ServiceDetail.vue"),
   },
   {
     path: "/contact",
