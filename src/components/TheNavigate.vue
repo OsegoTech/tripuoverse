@@ -20,10 +20,10 @@
         </RouterLink>
 
         <div
-          v-if="authorized"
           class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse"
         >
           <button
+            v-if="authorized"
             type="button"
             class="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
             id="user-menu-button"
