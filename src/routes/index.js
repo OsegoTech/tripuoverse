@@ -1,12 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomePage from "../Views/HomePage.vue";
-import Register from "../Views/Register.vue";
 import UserNavigation from "../Views/UserNavigation.vue";
 import CreateProduct from "../components/CreateProduct.vue";
 import ProductView from "../Views/ProductsView.vue";
 import ServicesView from "../Views/ServicesView.vue";
 import ContactView from "../Views/ContactView.vue";
-import LoginView from "../Views/LoginView.vue";
 import Dashboard from "../components/Dashboard/Dashboard.vue";
 import UserDashboard from "../components/Dashboard/UserDashboard.vue";
 import store from "../store/index.js";
@@ -27,20 +25,15 @@ const routes = [
     meta: {
       requiresGuest: true,
     },
-    component: LoginView,
+    component: () => import("../Views/SignupForm/Login.vue"),
   },
-  {
-    path: "/register1",
-    name: "Register1",
-    meta: {
-      requiresGuest: true,
-    },
-    component: Register,
-  },
-  // to be deleted
+
   {
     path: "/register",
     name: "Register",
+    meta: {
+      requiresGuest: true,
+    },
     component: () => import("../Views/SignupForm/PersonalDetails.vue"),
   },
   {
@@ -66,9 +59,9 @@ const routes = [
   {
     path: "/products/:productId",
     name: "ProductDetails",
-    component:() => import("../Views/ProductDetail.vue"),
+    component: () => import("../Views/ProductDetail.vue"),
   },
-  
+
   {
     path: "/services",
     name: "Services",
@@ -77,7 +70,7 @@ const routes = [
   {
     path: "/services/:serviceId",
     name: "ServiceDetails",
-    component:() => import("../Views/ServiceDetail.vue"),
+    component: () => import("../Views/ServiceDetail.vue"),
   },
   {
     path: "/contact",

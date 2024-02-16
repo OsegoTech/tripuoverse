@@ -114,13 +114,21 @@
           </div>
           <div class="flex items-center justify-between">
             <button
-              
               :disabled="loading"
               class="bg-blue-700 w-full hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="submit"
             >
               {{ loading ? "Loading..." : "Register" }}
             </button>
+          </div>
+          <!-- already registered -->
+          <div class="text-center mt-4">
+            <p class="text-blue-700">
+              Already have an account?
+              <router-link to="/login" class="text-blue-700 hover:underline"
+                >Login</router-link
+              >
+            </p>
           </div>
         </form>
       </div>
