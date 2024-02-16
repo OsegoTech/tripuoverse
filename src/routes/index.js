@@ -30,12 +30,18 @@ const routes = [
     component: LoginView,
   },
   {
-    path: "/register",
-    name: "Register",
+    path: "/register1",
+    name: "Register1",
     meta: {
       requiresGuest: true,
     },
     component: Register,
+  },
+  // to be deleted
+  {
+    path: "/register",
+    name: "Register",
+    component: () => import("../Views/SignupForm/PersonalDetails.vue"),
   },
   {
     path: "/forgot-password",

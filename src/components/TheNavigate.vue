@@ -175,6 +175,7 @@ import { RouterLink } from "vue-router";
 
 onMounted(() => {
   initFlowbite();
+  console.log(user);
 });
 
 // get the isloggedin getter from store

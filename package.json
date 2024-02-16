@@ -24,6 +24,7 @@
     "mosha-vue-toastify": "^1.0.23",
     "pinia": "^2.1.6",
     "primevue": "^3.45.0",
+    "scaling-garbanzo": "^1.0.6",
     "sharp": "^0.32.6",
     "validator": "^13.11.0",
     "vee-validate": "^4.11.8",
