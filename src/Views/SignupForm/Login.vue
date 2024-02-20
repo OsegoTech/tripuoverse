@@ -60,6 +60,9 @@
               {{ loading ? "Loading..." : "Login" }}
             </button>
           </div>
+          <div v-if="errorMsg">
+            <p class="text-red-500 text-lg italic">{{ errorMsg }}</p>
+          </div>
           <!-- already registered -->
           <div class="text-center mt-4">
             <p class="text-blue-700">
@@ -97,14 +100,19 @@ const login = async () => {
 
   try {
     await store.dispatch("login", user);
-    toast.info("Logged in successfully", {
-      timeout: 2000,
-      position: "top-center",
-      containerClasses: ["bg-primary-600", "text-white"],
-    });
-    router.push({ name: "Home" });
+    // toast.info("Logged in successfully", {
+    //   timeout: 2000,
+    //   position: "top-center",
+    //   containerClasses: ["bg-primary-600", "text-white"],
+    // });
+    // router.push({ name: "Home" });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
+    if (error.response) {
+      errorMsg.value = error.response.data.message;
+    } else {
+      errorMsg.value = "Wrong email or password. Please try again.";
+    }
   } finally {
     loading.value = false;
   }

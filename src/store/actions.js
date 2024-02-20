@@ -1,15 +1,18 @@
 import axiosClient from "../axios.js";
 import { useToast } from "vue-toastification";
+import router from "../routes/index.js";
 const toast = useToast();
 
 //     AUTHENTICATION
 export function login({ commit }, data) {
   return axiosClient.post("/auth/login", data).then(({ data }) => {
-    console.log("user data", data);
-    console.log("user data", data.data.user);
+    // console.log("user data", data);
+    // console.log("user data", data.data.user);
     commit("setUser", data.data.user);
-    console.log("user token", data.token);
+    // console.log("user token", data.token);
     commit("setToken", data.token);
+    toast.success("Logged in successfully");
+    router.push("/");
   });
 }
 

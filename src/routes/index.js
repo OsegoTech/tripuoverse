@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomePage from "../Views/HomePage.vue";
 import UserNavigation from "../Views/UserNavigation.vue";
 import CreateProduct from "../components/CreateProduct.vue";
 import ProductView from "../Views/ProductsView.vue";
@@ -13,7 +12,7 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: HomePage,
+    component: () => import("../Views/HomePage.vue"),
     meta: {
       requiresAuth: false,
     },
