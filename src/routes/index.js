@@ -4,7 +4,6 @@ import CreateProduct from "../components/CreateProduct.vue";
 import ProductView from "../Views/ProductsView.vue";
 import ServicesView from "../Views/ServicesView.vue";
 import ContactView from "../Views/ContactView.vue";
-import Dashboard from "../components/Dashboard/Dashboard.vue";
 import UserDashboard from "../components/Dashboard/UserDashboard.vue";
 import store from "../store/index.js";
 
@@ -85,23 +84,6 @@ const routes = [
     path: "/sellerview",
     name: "seller-view",
     component: UserDashboard,
-  },
-
-  // dashboard
-  {
-    path: "/app",
-    name: "app",
-    meta: {
-      requiresAuth: true,
-    },
-    component: Dashboard,
-    children: [
-      {
-        path: "/dashboard",
-        name: "app.dashboard",
-        component: CreateProduct,
-      },
-    ],
   },
 
   {

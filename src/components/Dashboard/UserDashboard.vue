@@ -2,7 +2,7 @@
   <div>
     <TheNavigate />
     <div class="py-2 px-3 bg-slate-200 rounded-md mx-2 my-2">
-      <div class="flex justify-between items-center px-4">
+      <div class="flex flex-col justify-between items-center px-4 md:flex md:flex-row">
         <h1 class="text-2xl font-bold">
           Hello <span class="text-blue-500">{{ sellername }}</span
           >, Welcome to your Dashbord
@@ -50,16 +50,11 @@
 
       <div>
         <div class="flex justify-between items-center px-4">
-          <h1 class="text-2xl font-bold mt-4">Recent Services</h1>
+          <h1 class="text-2xl font-bold mt-4">Recent Products</h1>
           <div class="flex justify-between items-center">
             <button class="bg-blue-500 rounded-md mx-3">
               <router-link to="/create-service" class="text-white py-3 px-3"
-                >New Service</router-link
-              >
-            </button>
-            <button class="bg-blue-500 rounded-md mx-3">
-              <router-link to="/create-service" class="text-white py-3 px-3"
-                >All services</router-link
+                >All Products</router-link
               >
             </button>
           </div>
@@ -86,11 +81,6 @@
         <div class="flex justify-between items-center px-4">
           <h1 class="text-2xl font-bold mt-4">Recent Services</h1>
           <div class="flex justify-between items-center">
-            <button class="bg-blue-500 rounded-md mx-3">
-              <router-link to="/create-service" class="text-white py-3 px-3"
-                >New Service</router-link
-              >
-            </button>
             <button class="bg-blue-500 rounded-md mx-3">
               <router-link to="/create-service" class="text-white py-3 px-3"
                 >All services</router-link
@@ -124,7 +114,6 @@
 </template>
 
 <script setup>
-
 import CreateService from "../CreateService.vue";
 import CreateProduct from "../CreateProduct.vue";
 import TheFooter from "../TheFooter.vue";

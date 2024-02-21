@@ -31,6 +31,13 @@ export function logout({ commit }) {
   toast.success("Logged out successfully");
 }
 
+export function getCurrentUser({ commit }) {
+  return axiosClient.get("/user").then((response) => {
+      commit("setUser", response.data);
+      return response;
+  });
+}
+
 export function getUser({ commit }) {
   return axiosClient.get(`/user/${id}`).then(({ data }) => {
     commit("setUser", data);

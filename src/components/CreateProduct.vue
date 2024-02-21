@@ -157,7 +157,7 @@
                   clip-rule="evenodd"
                 ></path>
               </svg>
-              Add new Service
+              Add new product
             </button>
           </div>
         </form>
@@ -204,7 +204,6 @@ const handleSubmit = async () => {
     if (modalElement) {
       modalElement.classList.add("hidden");
     }
-
   } catch (error) {
     errorMsg.value = error.message;
   } finally {

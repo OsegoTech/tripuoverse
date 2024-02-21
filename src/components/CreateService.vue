@@ -192,10 +192,10 @@ const handleSubmit = async () => {
 
   // create form data object to handle upload
   const formData = new FormData();
-  formData.append("name", product.value.name);
-  formData.append("price", product.value.price);
-  formData.append("description", product.value.description);
-  formData.append("image", product.value.image);
+  formData.append("name", service.value.name);
+  formData.append("price", service.value.price);
+  formData.append("description", service.value.description);
+  formData.append("image", service.value.image);
 
   try {
     await store.dispatch("createService", formData);
