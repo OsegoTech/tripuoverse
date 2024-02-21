@@ -90,6 +90,14 @@ export function latestServices({ commit }) {
   });
 }
 
+export const getServicesByUser = ({ commit }) => {
+  return axiosClient.get("/services/services-by-user").then((response) => {
+    console.log(response.data);
+    commit("SET_SERVICES_BY_USER", response.data);
+  });
+
+}
+
 // products
 export async function fetchProducts({ commit }) {
   commit("SET_LOADING", true);
@@ -151,6 +159,14 @@ export function getProductsCount({ commit }) {
     console.log(response.data.results);
     commit("SET_PRODUCTS_COUNT", response.data.results);
   });
+}
+
+export function getProductsByUser({ commit }) {
+  return axiosClient.get("/products/products-by-user").then((response) => {
+    console.log(response.data);
+    commit("SET_PRODUCTS_BY_USER", response.data);
+  });
+
 }
 
 // CATEGORIES

@@ -7,6 +7,8 @@ const state = {
   usersCount: 0,  
   productsCount: 0,
   servicesCount: 0,
+  productsByUser: [],
+  servicesByUser: [],
   services: [],
   service: {},
   products: [],

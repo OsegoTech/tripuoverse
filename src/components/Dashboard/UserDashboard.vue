@@ -2,7 +2,9 @@
   <div>
     <TheNavigate />
     <div class="py-2 px-3 bg-slate-200 rounded-md mx-2 my-2">
-      <div class="flex flex-col justify-between items-center px-4 md:flex md:flex-row">
+      <div
+        class="flex flex-col justify-between items-center px-4 md:flex md:flex-row"
+      >
         <h1 class="text-2xl font-bold">
           Hello <span class="text-blue-500">{{ sellername }}</span
           >, Welcome to your Dashbord
@@ -31,13 +33,13 @@
         <div
           class="bg-blue-500 text-white flex flex-col items-center justify-between rounded-lg py-3"
         >
-          <h1 class="text-4xl">56</h1>
+          <h1 class="text-4xl">{{ products.length }}</h1>
           <h1 class="text-3xl font-serif">Products</h1>
         </div>
         <div
           class="bg-blue-500 text-white flex flex-col items-center justify-between rounded-lg py-3"
         >
-          <h1 class="text-4xl">56</h1>
+          <h1 class="text-4xl">{{ services.length }}</h1>
           <h1 class="text-3xl font-serif">Services</h1>
         </div>
         <div
@@ -59,21 +61,18 @@
             </button>
           </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 py-2 px-4 mt-2">
-          <div class="bg-white rounded-lg p-4">
-            <h1 class="text-xl font-bold">Service Name</h1>
-            <p class="text-gray-500">Category</p>
-            <p class="text-gray-500">Price</p>
-          </div>
-          <div class="bg-white rounded-lg p-4">
-            <h1 class="text-xl font-bold">Service Name</h1>
-            <p class="text-gray-500">Category</p>
-            <p class="text-gray-500">Price</p>
-          </div>
-          <div class="bg-white rounded-lg p-4">
-            <h1 class="text-xl font-bold">Service Name</h1>
-            <p class="text-gray-500">Category</p>
-            <p class="text-gray-500">Price</p>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 py-2 px-4 mt-2"
+        >
+          <div v-for="product in products" key="product.id">
+            <ProductCard
+              :name="product.title.substring(0, 17) + '...'"
+              :price="product.price"
+              :description="product.description.substring(0, 17) + '...'"
+              :image="product.image"
+              seller="John Doe"
+              :date="product.date"
+            />
           </div>
         </div>
       </div>
@@ -88,21 +87,18 @@
             </button>
           </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 py-2 px-4 mt-2">
-          <div class="bg-white rounded-lg p-4">
-            <h1 class="text-xl font-bold">Service Name</h1>
-            <p class="text-gray-500">Category</p>
-            <p class="text-gray-500">Price</p>
-          </div>
-          <div class="bg-white rounded-lg p-4">
-            <h1 class="text-xl font-bold">Service Name</h1>
-            <p class="text-gray-500">Category</p>
-            <p class="text-gray-500">Price</p>
-          </div>
-          <div class="bg-white rounded-lg p-4">
-            <h1 class="text-xl font-bold">Service Name</h1>
-            <p class="text-gray-500">Category</p>
-            <p class="text-gray-500">Price</p>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 py-2 px-4 mt-2"
+        >
+          <div v-for="service in services" :key="service.id">
+            <ServiceCard
+              :name="service.name.substring(0, 17) + '...'"
+              :price="service.price"
+              :description="service.description.substring(0, 17) + '...'"
+              :image="service.image"
+              seller="John Doe"
+              :date="service.date"
+            />
           </div>
         </div>
       </div>
@@ -118,12 +114,22 @@ import CreateService from "../CreateService.vue";
 import CreateProduct from "../CreateProduct.vue";
 import TheFooter from "../TheFooter.vue";
 import TheNavigate from "../TheNavigate.vue";
-import { onMounted, ref } from "vue";
+import { computed, onMounted, ref } from "vue";
 import { initModals } from "flowbite";
+import store from "../../store/index.js";
+import ProductCard from "../ProductCard.vue";
+import ServiceCard from "../ServiceCard.vue";
 
 const sellername = "Jeff";
+const products = computed(() => store.state.productsByUser);
+console.log(products.value);
+const services = computed(() => store.state.servicesByUser);
+console.log(services.value);
+
 onMounted(() => {
   initModals();
+  store.dispatch("getProductsByUser");
+  store.dispatch("getServicesByUser");
 });
 
 const showCreateService = ref(false);

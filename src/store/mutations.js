@@ -38,7 +38,10 @@ export function SET_SERVICE(state, service) {
 
 export function SET_SERVICES_COUNT(state, count) {
   state.servicesCount = count;
+}
 
+export function SET_SERVICES_BY_USER(state, services) {
+  state.servicesByUser = services;
 }
 
 // PRODUCT MUTATIONS
@@ -48,6 +51,10 @@ export function SET_PRODUCTS(state, products) {
 
 export function SET_PRODUCT(state, product) {
   state.product = product;
+}
+
+export function SET_PRODUCTS_BY_USER(state, products) {
+  state.productsByUser = products;
 }
 
 // export function ADD_PRODUCT(state, product) {
