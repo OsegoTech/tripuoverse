@@ -172,10 +172,10 @@ import { initFlowbite } from "flowbite";
 import { computed, onMounted } from "vue";
 import { ref } from "vue";
 import { RouterLink } from "vue-router";
+import axiosClient from "../axios";
 
 onMounted(() => {
   initFlowbite();
-  console.log(user);
 });
 
 // get the isloggedin getter from store

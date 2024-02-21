@@ -91,15 +91,11 @@ console.log(products.value);
 
 onMounted(async () => {
   store.dispatch("latestProducts");
-});
-
-onMounted(async () => {
   store.dispatch("latestServices");
-});
-
-onMounted(() => {
   initFlowbite();
 });
+
+
 </script>
 
 <style lang="scss" scoped></style>

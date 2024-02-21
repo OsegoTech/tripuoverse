@@ -8,21 +8,17 @@
           class="grid max-w-screen-md gap-8 mx-auto text-gray-900 sm:grid-cols-3 dark:text-white"
         >
           <div class="flex flex-col items-center justify-center">
-            <dt class="mb-2 text-3xl md:text-4xl font-extrabold">73M+</dt>
-            <dd class="font-light text-gray-500 dark:text-gray-400">
-              Users
-            </dd>
+            <dt class="mb-2 text-3xl md:text-4xl font-extrabold">{{ userCount }}</dt>
+            <dd class="font-light text-gray-500 dark:text-gray-400">Users</dd>
           </div>
           <div class="flex flex-col items-center justify-center">
-            <dt class="mb-2 text-3xl md:text-4xl font-extrabold">1B+</dt>
-            <dd class="font-light text-gray-500 dark:text-gray-400">
-              Sales
-            </dd>
+            <dt class="mb-2 text-3xl md:text-4xl font-extrabold">{{ servicesCount }}</dt>
+            <dd class="font-light text-gray-500 dark:text-gray-400">Services</dd>
           </div>
           <div class="flex flex-col items-center justify-center">
-            <dt class="mb-2 text-3xl md:text-4xl font-extrabold">4M+</dt>
+            <dt class="mb-2 text-3xl md:text-4xl font-extrabold">{{ productCount }}</dt>
             <dd class="font-light text-gray-500 dark:text-gray-400">
-              Listings
+              Products
             </dd>
           </div>
         </dl>
@@ -31,6 +27,21 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { onMounted, computed } from "vue";
+import store from "../store/index.js";
+
+const userCount = computed(() => store.state.usersCount);  
+const productCount = computed(() => store.state.productsCount);
+const servicesCount = computed(() => store.state.servicesCount);
+
+
+onMounted(() => {
+  document.title = "TripuoVerse | Home ";
+  store.dispatch("getUsersCount");
+  store.dispatch("getProductsCount");
+  store.dispatch("getServices");
+});
+</script>
 
 <style lang="scss" scoped></style>

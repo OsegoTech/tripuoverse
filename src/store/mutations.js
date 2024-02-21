@@ -11,6 +11,10 @@ export function setUser(state, user) {
   }
 }
 
+export function SET_USERS_COUNT(state, count) {
+  state.usersCount = count;
+}
+
 export function setToken(state, token) {
   state.user.token = token;
   if (token) {
@@ -32,6 +36,11 @@ export function SET_SERVICE(state, service) {
   state.service = service;
 }
 
+export function SET_SERVICES_COUNT(state, count) {
+  state.servicesCount = count;
+
+}
+
 // PRODUCT MUTATIONS
 export function SET_PRODUCTS(state, products) {
   state.products = products;
@@ -39,7 +48,6 @@ export function SET_PRODUCTS(state, products) {
 
 export function SET_PRODUCT(state, product) {
   state.product = product;
-
 }
 
 // export function ADD_PRODUCT(state, product) {
@@ -53,4 +61,8 @@ export function setCategories(state, category) {
 // PRODUCTS
 export function SET_LATEST_PRODUCTS(state, products) {
   state.latestproducts = products;
+}
+
+export function SET_PRODUCTS_COUNT(state, count) {
+  state.productsCount = count;
 }
