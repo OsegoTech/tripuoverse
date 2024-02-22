@@ -9,11 +9,12 @@
         />
         <div class="absolute inset-0 bg-black opacity-40"></div>
         <div class="absolute inset-0 flex items-center justify-center">
-          <button
+          <RouterLink
+          :to="`/services/${id}`"
             class="bg-white text-gray-900 py-2 px-6 rounded-full font-bold hover:bg-gray-300"
           >
-            View Product
-          </button>
+            View Service
+          </RouterLink>
         </div>
       </div>
       <h3 class="text-xl font-bold text-gray-900 mt-4">{{ name }}</h3>
@@ -24,12 +25,17 @@
         <span class="text-gray-900 font-bold text-lg"
           >Kes {{ price }}</span
         >
-        <a
+        <!-- <a
             href="#"
           class="bg-gray-900 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800"
         >
           chat
-        </a>
+        </a> -->
+        <button
+          class="bg-gray-900 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800"
+        >
+          Latest
+        </button>
       </div>
     </div>
   </div>
@@ -43,6 +49,8 @@ defineProps({
   image: String,
   seller: String,
   date: String,
+  id: String,
+  whatsApp: String,
 });
 </script>
 

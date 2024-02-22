@@ -25,8 +25,10 @@
               :price="product.price"
               :description="product.description.substring(0, 17) + '...'"
               :image="product.image"
-              seller="John Doe"
+              :seller="product.seller.firstName"
               :date="product.date"
+              :id="product._id"
+              :whatsApp="product.seller.whatsApp"
             />
           </div>
         </div>
@@ -45,15 +47,17 @@
             >
           </div>
           <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
-            <NewProductCard
+            <NewServiceCard
               v-for="service in services"
-              :key="service.id"
+              :key="service._id"
               :name="service.name.substring(0, 17) + '...'"
               :price="service.price"
               :description="service.description.substring(0, 17) + '...'"
               :image="service.image"
-              seller="John Doe"
               :date="service.date"
+              :id="service._id"
+              :seller="service.provider.firstName"
+              :whatsApp="service.provider.whatsApp"
             />
           </div>
         </div>
@@ -80,6 +84,7 @@ import { initFlowbite } from "flowbite";
 import NewProductCard from "../components/NewProductCard.vue";
 import store from "../store/index.js";
 import { onMounted, computed } from "vue";
+import NewServiceCard from "../components/NewServiceCard.vue";
 
 const products = computed(() => store.state.latestproducts);
 const loading = computed(() => store.state.loading);

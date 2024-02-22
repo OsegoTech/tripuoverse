@@ -28,7 +28,7 @@
 </template>
 
 <script setup>
-import { computed, onMounted } from "vue";
+import { computed, onBeforeMount, onMounted } from "vue";
 import ProductCardVue from "../components/ProductCard.vue";
 import store from "../store/index.js";
 import TheFooter from "../components/TheFooter.vue";
@@ -41,9 +41,10 @@ console.log(`productsCount: ${productsCount}`);
 console.log(products.value);
 
 // fetch products when component is mounted
-onMounted(async () => {
+onBeforeMount(async () => {
   store.dispatch("fetchProducts");
 });
+
 
 
 
