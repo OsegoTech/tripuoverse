@@ -34,6 +34,8 @@
                 v-model="user.email"
                 placeholder="osego@email.com"
               />
+              <div v-if="v$.email?.$pending" class="text-xs text-blue-700">Checking email...</div>
+              <div v-if="!v$.email?.$pending && v$.email?.$error" class="text-xs text-red-500">{{ v$.email.$errors[0] }}</div>
             </div>
             <div class="w-full px-3">
               <label
@@ -49,11 +51,14 @@
                 v-model="user.password"
                 placeholder="******************"
               />
+             
+              <div v-if="v$.password?.$pending" class="text-xs text-blue-700">Checking password...</div>
+              <div v-if="!v$.password?.$pending && v$.password?.$error" class="text-xs text-red-500">{{ v$.password.$errors[0] }}</div>
             </div>
           </div>
           <div class="flex items-center justify-between">
             <button
-              :disabled="loading"
+              :disabled="loading || v$.$pending || v$.$error"
               class="bg-blue-700 w-full hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="submit"
             >
@@ -81,10 +86,8 @@
 <script setup>
 import { ref } from "vue";
 import store from "../../store/index.js";
-import router from "../../routes/index.js";
-import { useToast } from "vue-toastification";
-
-const toast = useToast();
+import { useVuelidate } from "@vuelidate/core";
+import { required, email, minLength } from "@vuelidate/validators";
 
 let loading = ref(false);
 let errorMsg = ref("");
@@ -94,18 +97,19 @@ const user = {
   password: "",
 };
 
+const rules = {
+  email: { required, email },
+  password: { required, minLength: minLength(6) },
+};
+
+const v$ = useVuelidate(rules, user);
+
 const login = async () => {
   loading.value = true;
   errorMsg.value = "";
 
   try {
     await store.dispatch("login", user);
-    // toast.info("Logged in successfully", {
-    //   timeout: 2000,
-    //   position: "top-center",
-    //   containerClasses: ["bg-primary-600", "text-white"],
-    // });
-    // router.push({ name: "Home" });
   } catch (error) {
     // console.log(error);
     if (error.response) {

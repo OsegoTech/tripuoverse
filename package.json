@@ -18,6 +18,8 @@
     "@headlessui/vue": "^1.7.19",
     "@heroicons/vue": "^2.1.1",
     "@vee-validate/zod": "^4.11.8",
+    "@vuelidate/core": "^2.0.3",
+    "@vuelidate/validators": "^2.0.4",
     "axios": "^1.5.1",
     "express-async-handler": "^1.2.0",
     "flowbite": "^2.2.0",
