@@ -32,7 +32,7 @@
                 id="grid-password"
                 type="email"
                 v-model="user.email"
-                placeholder="osego@email.com"
+                placeholder="superadmin@gmail.com"
               />
               <div v-if="v$.email?.$pending" class="text-xs text-blue-700">Checking email...</div>
               <div v-if="!v$.email?.$pending && v$.email?.$error" class="text-xs text-red-500">{{ v$.email.$errors[0] }}</div>
@@ -49,7 +49,7 @@
                 id="grid-password"
                 type="password"
                 v-model="user.password"
-                placeholder="******************"
+                placeholder="test1234"
               />
              
               <div v-if="v$.password?.$pending" class="text-xs text-blue-700">Checking password...</div>
