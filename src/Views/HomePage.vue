@@ -64,6 +64,7 @@
       </div>
     </div>
     <FeatureSection />
+    
     <SocialProof />
     <TestimonialSection />
     <NewsletterSection />
@@ -99,8 +100,6 @@ onMounted(async () => {
   store.dispatch("latestServices");
   initFlowbite();
 });
-
-
 </script>
 
 <style lang="scss" scoped></style>

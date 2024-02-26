@@ -9,7 +9,7 @@
           <div v-if="loading">Fetching products...</div>
           <!-- <div v-else-if="productsCount == 0">No products</div> -->
           <div v-else v-for="product in products" :key="product.id">
-            <ProductCardVue
+            <ItemCard
               :name="product.title.substring(0, 17) + '...'"
               :price="product.price"
               :description="product.description.substring(0, 25) + '...'"
@@ -33,6 +33,7 @@ import ProductCardVue from "../components/ProductCard.vue";
 import store from "../store/index.js";
 import TheFooter from "../components/TheFooter.vue";
 import TheNavigate from "../components/TheNavigate.vue";
+import ItemCard from "../components/core/ItemCard.vue";
 
 const products = computed(() => store.state.products);
 const loading = computed(() => store.state.loading);

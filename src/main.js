@@ -3,6 +3,20 @@ import { createPinia } from "pinia";
 import PrimeVue from "primevue/config";
 import Toast from "vue-toastification";
 
+
+//vuetify
+import 'vuetify/styles'
+import { createVuetify } from "vuetify";
+import * as components from "vuetify/components";
+import * as directives from "vuetify/directives";
+
+const vuetify = createVuetify({
+  components,
+  directives,
+});
+
+
+
 import "vue-toastification/dist/index.css";
 
 import "./style.css";
@@ -43,6 +57,9 @@ app.use(Toast, {
   icon: true,
   rtl: false,
 });
+app.use(vuetify);
+
+
 
 
 // primevue components
