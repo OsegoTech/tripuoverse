@@ -85,6 +85,22 @@ const routes = [
     name: "seller-view",
     component: UserDashboard,
   },
+  {
+    path: "/app",
+    name: "app",
+    component: () => import("../components/Dashboard/Dashboard.vue"),
+    meta: {
+      requiresAuth: true,
+    },
+    children: [
+      {
+        path: "dashboard",
+        name: "app.dashboard",
+        component: () => import("../components/Dashboard/Views/EyeDashboard.vue"),
+      }
+    ]
+  },
+ 
 
   {
     path: "/:pathMatch(.*)*",
