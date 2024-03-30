@@ -9,7 +9,7 @@
           <div v-if="loading">Fetching products...</div>
           <!-- <div v-else-if="productsCount == 0">No products</div> -->
           <div v-else v-for="product in products" :key="product.id">
-            <ItemCard
+            <ProductCardVue
               :name="product.title.substring(0, 17) + '...'"
               :price="product.price"
               :description="product.description.substring(0, 25) + '...'"
