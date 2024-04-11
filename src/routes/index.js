@@ -89,18 +89,17 @@ const routes = [
     path: "/app",
     name: "app",
     component: () => import("../components/Dashboard/Dashboard.vue"),
-    meta: {
-      requiresAuth: true,
-    },
+    // meta: {
+    //   requiresAuth: true,
+    // },
     children: [
       {
         path: "dashboard",
         name: "app.dashboard",
-        component: () => import("../components/Dashboard/Views/EyeDashboard.vue"),
-      }
-    ]
+        component: () => import("../components/Dashboard/AppInsights.vue"),
+      },
+    ],
   },
- 
 
   {
     path: "/:pathMatch(.*)*",
