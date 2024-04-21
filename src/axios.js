@@ -2,12 +2,11 @@ import axios from "axios";
 import store from "./store";
 import router from "./routes/index.js";
 
-const url = `${import.meta.env.VITE_API_BASE_URL}/api`;
+const url = `${import.meta.env.VITE_API_URL}`;
 console.log(url);
 
 const axiosClient = axios.create({
-    baseURL: "https://tripuoverse.azurewebsites.net/api",
-    // baseURL: 'http://localhost:8080/api',
+    baseURL: `${import.meta.env.VITE_API_URL}`,
 });
 console.log(url);
 
