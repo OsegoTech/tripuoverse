@@ -2,13 +2,12 @@ import axios from "axios";
 import store from "./store";
 import router from "./routes/index.js";
 
-const url = `${import.meta.env.VITE_API_URL}`;
-console.log(url);
 
+console.log(import.meta.env.VITE_API_URL);
 const axiosClient = axios.create({
-    baseURL: `${import.meta.env.VITE_API_URL}`,
+    baseURL: import.meta.env.VITE_API_URL,
 });
-console.log(url);
+
 
 
 axiosClient.interceptors.request.use(config => {

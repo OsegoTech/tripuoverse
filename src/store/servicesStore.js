@@ -16,9 +16,7 @@ export const useServiceStore = defineStore({
     async fetchServices() {
       try {
         this.loading = true;
-        const res = await fetch("https://tripuoverse.azurewebsites.net/api/services");
-        // const res = await fetch("http://localhost:8080/api/services");
-        // const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/services`);
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/services`);
       
         if (!res.ok) {
           throw new Error("Network response was not ok.");
