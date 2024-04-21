@@ -27,7 +27,7 @@
 </template>
 
 <script setup>
-import {  ref, watch } from "vue";
+import { onMounted, ref, watch } from "vue";
 import axios from "axios";
 import ProductCardVue from "../components/ProductCard.vue";
 import TheFooter from "../components/TheFooter.vue";
@@ -39,23 +39,21 @@ const loading = ref(false)
 
 
 
-
-const emptyString = ref("")
-console.log(typeof(emptyString));
-
-
 const fetchProducts = () => {
-  axios.get(`${import.meta.env.VITE_API_URL}/products${searchTerm.value? `?qSearch=${searchTerm.value}` :""}`)
+  console.log(`${import.meta.env.VITE_API_URL}`);
+  axios.get(`${import.meta.env.VITE_API_URL}/products${searchTerm.value ? `?qSearch=${searchTerm.value}` : ""}`)
     .then((response) => {
       console.log(response.data);
       products.value = response.data
     })
 }
 
+onMounted(() => {
+  fetchProducts()
+})
+
 watch(searchTerm, () => {
   fetchProducts()
-}, { immediate: true })
+}, { immediate: false })
 
 </script>
-
-
