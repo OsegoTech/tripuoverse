@@ -88,13 +88,13 @@
       </div>
     </div>
     <div>
-      <div class="bg-gray-900 py-16">
+      <div class=" py-16">
         <div class="container mx-auto px-4">
-          <div class="flex justify-between items-center">
-            <h2 class="text-3xl font-bold text-white mb-8">
+          <div class="flex justify-between bg-blue-600 px-6 mb-3 py-2 rounded-sm items-center">
+            <h2 class="text-2xl font-bold text-white ">
               Featured Products
             </h2>
-            <RouterLink to="/services" class="text-3xl font-bold text-white mb-8">
+            <RouterLink to="/services" class="text-2xl font-bold text-white">
               All Products</RouterLink>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
@@ -107,11 +107,11 @@
       </div>
     </div>
     <div>
-      <div class="bg-gray-900 py-16">
+      <div class=" py-16">
         <div class="container mx-auto px-4">
-          <div class="flex justify-between items-center">
-            <h2 class="text-3xl font-bold text-white mb-8">Latest Services</h2>
-            <RouterLink to="/services" class="text-3xl font-bold text-white mb-8">
+          <div class="flex justify-between bg-blue-600 px-6 mb-3 py-2 rounded-sm items-center">
+            <h2 class="text-2xl font-bold text-white">Latest Services</h2>
+            <RouterLink to="/services" class="text-2xl font-bold text-white">
               All services</RouterLink>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
@@ -126,8 +126,8 @@
     <FeatureSection />
 
     <SocialProof />
-    <TestimonialSection />
-    <NewsletterSection />
+    <!-- <TestimonialSection /> -->
+    <!-- <NewsletterSection /> -->
     <TheFooter />
   </div>
 </template>
@@ -138,9 +138,6 @@ import { ref } from "vue"
 
 import FeatureSection from "../components/FeatureSection.vue";
 import SocialProof from "../components/SocialProof.vue";
-import TestimonialSection from "../components/TestimonialSection.vue";
-import NewsletterSection from "../components/NewsletterSection.vue";
-// import TheNavbar from "../components/TheNavbar.vue";
 import TheFooter from "../components/TheFooter.vue";
 import TheNavigate from "../components/TheNavigate.vue";
 

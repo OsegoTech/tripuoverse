@@ -1,18 +1,12 @@
 <template>
   <div>
-    <div class="bg-white rounded-lg shadow-lg p-8">
+    <div class="bg-white rounded-lg shadow-lg p-8 border-2 border-blue-500">
       <div class="relative overflow-hidden">
-        <img
-          class="object-cover w-full h-full"
-          :src="image"
-          alt="Product"
-        />
+        <img class="object-cover w-full h-full" :src="image" alt="Product" />
         <div class="absolute inset-0 bg-black opacity-40"></div>
         <div class="absolute inset-0 flex items-center justify-center">
-          <RouterLink
-          :to="`/services/${id}`"
-            class="bg-white text-gray-900 py-2 px-6 rounded-full font-bold hover:bg-gray-300"
-          >
+          <RouterLink :to="`/services/${id}`"
+            class="bg-white text-gray-900 py-2 px-6 rounded-full font-bold hover:bg-gray-300">
             View Service
           </RouterLink>
         </div>
@@ -22,20 +16,11 @@
         {{ description }}
       </p>
       <div class="flex items-center justify-between mt-4">
-        <span class="text-gray-900 font-bold text-lg"
-          >Kes {{ price }}</span
-        >
-        <!-- <a
-            href="#"
-          class="bg-gray-900 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800"
-        >
+        <span class="text-gray-900 font-bold text-lg">Kes {{ price }}</span>
+        <a href="#" class="bg-blue-500 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800">
           chat
-        </a> -->
-        <button
-          class="bg-gray-900 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800"
-        >
-          Latest
-        </button>
+        </a>
+
       </div>
     </div>
   </div>
