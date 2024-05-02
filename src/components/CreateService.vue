@@ -168,14 +168,14 @@
 
 <script setup>
 import { onMounted, ref } from "vue";
-import { initModals } from "flowbite";
+
 import store from "../store/index.js";
 
 let loading = ref(false);
 let errorMsg = ref(null);
 
 onMounted(() => {
-  initModals();
+ 
 });
 
 // define refs from input

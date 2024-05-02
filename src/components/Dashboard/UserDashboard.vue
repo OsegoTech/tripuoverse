@@ -115,7 +115,7 @@ import CreateProduct from "../CreateProduct.vue";
 import TheFooter from "../TheFooter.vue";
 import TheNavigate from "../TheNavigate.vue";
 import { computed, onMounted, ref } from "vue";
-import { initModals } from "flowbite";
+
 import store from "../../store/index.js";
 import ProductCard from "../ProductCard.vue";
 import ServiceCard from "../ServiceCard.vue";
@@ -127,7 +127,7 @@ const services = computed(() => store.state.servicesByUser);
 console.log(services.value);
 
 onMounted(() => {
-  initModals();
+ 
   store.dispatch("getProductsByUser");
   store.dispatch("getServicesByUser");
 });
