@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="bg-gray-400 font-bold text-white flex items-center justify-between px-6 py-2">
+    <div class="bg-blue-500 font-bold text-white flex items-center justify-between px-6 py-2">
       <p>🤑Sell on Osego</p>
       <p>Osego</p>
       <p>pay Safe</p>
