@@ -74,7 +74,9 @@
                 </div>
             </div>
             <div class="col-span-1 bg-white">
-                <h1>Graphs</h1>
+                <div class="card">
+                    <Chart type="bar" :data="chartData" :options="chartOptions" class="" />
+                </div>
             </div>
         </div>
 
@@ -84,7 +86,6 @@
 <script setup>
 import { ShoppingBag, UserRound, ShoppingCart, Users, ShoppingBasket } from "lucide-vue-next";
 import { ref, computed, onMounted } from 'vue'
-import store from '../../store/index.js'
 import axios from "axios"
 
 const products = ref([])
@@ -101,7 +102,75 @@ const fetchProducts = () => {
 
 onMounted(() => {
     fetchProducts()
+    chartData.value = setChartData()
+    chartOptions.value = setChartOptions()
 })
+
+const chartData = ref()
+const chartOptions = ref()
+
+const setChartData = () => {
+    const documentStyle = getComputedStyle(document.documentElement)
+    return {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+        datasets: [
+            {
+                label: 'Products',
+                backgroundColor: documentStyle.getPropertyValue('--green-500'),
+                data: [65, 59, 80, 81, 56, 55, 40]
+            },
+            {
+                label: 'Services',
+                backgroundColor: documentStyle.getPropertyValue('--blue-500'),
+                borderColor: documentStyle.getPropertyValue('--gray-500'),
+                data: [28, 48, 40, 19, 86, 27, 90]
+            }
+        ]
+    }
+}
+
+const setChartOptions = () => {
+    const documentStyle = getComputedStyle(document.documentElement)
+    const textColor = documentStyle.getPropertyValue('--text-color')
+    const textColorSecondary = documentStyle.getPropertyValue('--text-color-secondary')
+    const surfaceBorder = documentStyle.getPropertyValue('--surface-border')
+
+    return {
+        maintainAspectRatio: false,
+        aspectRatio: 0.8,
+        plugins: {
+            legend: {
+                labels: {
+                    color: textColor
+                }
+            }
+        },
+        scales: {
+            x: {
+                grid: {
+                    display: false,
+                    drawBorder: false
+                },
+                ticks: {
+                    color: textColorSecondary,
+                    font: {
+                        weight: 500
+                    }
+                }
+            },
+            y: {
+                grid: {
+                    color: surfaceBorder,
+                    drawBorder: false
+                },
+                ticks: {
+                    color: textColorSecondary
+                }
+            }
+        }
+    }
+
+}
 
 </script>
 

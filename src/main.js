@@ -22,6 +22,7 @@ import Carousel from "primevue/carousel";
 import DataTable from "primevue/datatable";
 import Column from "primevue/column";
 import Tag from "primevue/tag";
+import Chart from "primevue/chart";
 
 app
   .component("Button", Button)
@@ -29,7 +30,8 @@ app
   .component("Carousel", Carousel)
   .component("DataTable", DataTable)
   .component("Column", Column)
-  .component("Tag", Tag);
+  .component("Tag", Tag)
+  .component("Chart", Chart);
 
 app.use(router);
 app.use(pinia);
