@@ -114,11 +114,11 @@
             <RouterLink to="/services" class="text-2xl font-bold text-white">
               All services</RouterLink>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
-            <NewServiceCard v-for="service in services" :key="service._id" :name="service.name.substring(0, 17) + '...'"
+          <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8">
+            <NewServiceCard v-for="service in services" :key="service._id" :name="service.name.substring(0, 25) + '...'"
               :price="service.price" :description="service.description.substring(0, 17) + '...'" :image="service.image"
               :date="service.date" :id="service._id" :seller="service.provider.firstName"
-              :whatsApp="service.provider.whatsApp" />
+              :whatsApp="service.provider?.whatsApp" />
           </div>
         </div>
       </div>
