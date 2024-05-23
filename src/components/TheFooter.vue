@@ -12,7 +12,7 @@
               />
               <span
                 class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
-                >Tripuo-verse</span
+                >Osego</span
               >
             </RouterLink>
           </div>

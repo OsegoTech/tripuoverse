@@ -1,8 +1,8 @@
 <template>
   <div>
     <TheNavigate />
-    <div class="hidden md:block">
-      <div class="grid grid-cols-6 px-6 py-3 bg-blue-500 gap-2 ">
+    <div class="hidden container px-4 mx-auto md:block rounded-xl">
+      <div class="grid grid-cols-6 px-6 py-3 bg-blue-500 gap-2 rounded-lg">
         <div class="col-span-1 p-2 rounded-lg border-2 bg-white border-blue-500 ">
           <div class="flex items-center gap-1 rounded-md my-1 hover:bg-blue-100 px-3 py-3">
             <CircuitBoard color="#0f73d2" />

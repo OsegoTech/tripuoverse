@@ -6,6 +6,8 @@ import "primevue/resources/themes/aura-light-blue/theme.css";
 
 import "vue-toastification/dist/index.css";
 import "./style.css";
+import 'primeicons/primeicons.css'
+
 import "../src/assets/styles/app.css";
 import App from "./App.vue";
 
@@ -23,6 +25,8 @@ import DataTable from "primevue/datatable";
 import Column from "primevue/column";
 import Tag from "primevue/tag";
 import Chart from "primevue/chart";
+import Menubar from "primevue/menubar";
+import Avatar from "primevue/avatar";
 
 app
   .component("Button", Button)
@@ -31,7 +35,7 @@ app
   .component("DataTable", DataTable)
   .component("Column", Column)
   .component("Tag", Tag)
-  .component("Chart", Chart);
+  .component("Chart", Chart).component("Menubar", Menubar).component("Avatar", Avatar)
 
 app.use(router);
 app.use(pinia);
