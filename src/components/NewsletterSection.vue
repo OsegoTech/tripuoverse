@@ -1,10 +1,10 @@
 <template>
   <div>
-    <section class="bg-white dark:bg-gray-900">
+    <section class="bg-white text-black">
       <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
         <div class="mx-auto max-w-screen-md sm:text-center">
           <h2
-            class="mb-4 text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl dark:text-white"
+            class="mb-4 text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl "
           >
             Sign up for our newsletter
           </h2>
@@ -42,7 +42,7 @@
                   </svg>
                 </div>
                 <input
-                  class="block p-3 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:rounded-none sm:rounded-l-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                  class="block p-3 pl-10 w-full text-sm text-gray-900 rounded-lg border border-blue-300 sm:rounded-none sm:rounded-l-lg focus:ring-primary-500 focus:border-primary-500   dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                   placeholder="Enter your email"
                   type="email"
                   id="email"

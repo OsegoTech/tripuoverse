@@ -1,23 +1,23 @@
 <template>
   <div>
-    <section class="bg-white dark:bg-gray-900">
+    <section class="bg-white text-black">
       <div
         class="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6"
       >
         <dl
-          class="grid max-w-screen-md gap-8 mx-auto text-gray-900 sm:grid-cols-3 dark:text-white"
+          class="grid max-w-screen-md gap-8 mx-auto  sm:grid-cols-3 "
         >
           <div class="flex flex-col items-center justify-center">
             <dt class="mb-2 text-3xl md:text-4xl font-extrabold">{{ userCount }}</dt>
-            <dd class="font-light text-gray-500 dark:text-gray-400">Users</dd>
+            <dd class="font-light  ">Users</dd>
           </div>
           <div class="flex flex-col items-center justify-center">
             <dt class="mb-2 text-3xl md:text-4xl font-extrabold">{{ servicesCount }}</dt>
-            <dd class="font-light text-gray-500 dark:text-gray-400">Services</dd>
+            <dd class="font-light  ">Services</dd>
           </div>
           <div class="flex flex-col items-center justify-center">
             <dt class="mb-2 text-3xl md:text-4xl font-extrabold">{{ productCount }}</dt>
-            <dd class="font-light text-gray-500 dark:text-gray-400">
+            <dd class="font-light  ">
               Products
             </dd>
           </div>

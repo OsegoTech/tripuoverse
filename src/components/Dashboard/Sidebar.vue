@@ -1,7 +1,7 @@
 <template>
-    <div class=" w-[250px] h-screen py-4 px-6 border border-r border-2 border-gray-400">
+    <div class=" w-[250px] bg-white h-[85vh] py-4 px-6 rounded-xl shadow-2xl ml-5">
         <div>
-            <h1>OSEGO</h1>
+            <h1 class="font-bold">Home</h1>
         </div>
         <div class="flex flex-col gap-6">
             <SidebarLinks v-for="(sideBarLink, index) in sideBarLinks" :key="index" :title="sideBarLink.title"

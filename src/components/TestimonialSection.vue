@@ -1,12 +1,12 @@
 <template>
   <div>
-    <section class="bg-white dark:bg-gray-900">
+    <section class="bg-white ">
       <div
         class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6"
       >
         <div class="mx-auto max-w-screen-sm">
           <h2
-            class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white"
+            class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 "
           >
             Testimonials
           </h2>
@@ -17,14 +17,14 @@
             elements built with the utility classes from Tailwind
           </p>
         </div>
-        <div class="grid mb-8 lg:mb-12 lg:grid-cols-2">
+        <div class="grid mb-8 bg-gray-50 lg:mb-12 lg:grid-cols-2">
           <figure
-            class="flex flex-col justify-center items-center p-8 text-center bg-gray-50 border-b border-gray-200 md:p-12 lg:border-r dark:bg-gray-800 dark:border-gray-700"
+            class="flex flex-col justify-center items-center p-8 text-center  border-b border-gray-200 md:p-12 lg:border-r "
           >
             <blockquote
-              class="mx-auto mb-8 max-w-2xl text-gray-500 dark:text-gray-400"
+              class="mx-auto  mb-8 max-w-2xl text-gray-500 "
             >
-              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+              <h3 class="text-lg font-semibold  text-black">
                 Speechless with how easy this was to integrate
               </h3>
               <p class="my-4">
@@ -48,7 +48,7 @@
                 src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png"
                 alt="profile picture"
               />
-              <div class="space-y-0.5 font-medium dark:text-white text-left">
+              <div class="space-y-0.5 font-medium  text-left">
                 <div>Bonnie Green</div>
                 <div
                   class="text-sm font-light text-gray-500 dark:text-gray-400"
@@ -59,12 +59,12 @@
             </figcaption>
           </figure>
           <figure
-            class="flex flex-col justify-center items-center p-8 text-center bg-gray-50 border-b border-gray-200 md:p-12 dark:bg-gray-800 dark:border-gray-700"
+            class="flex flex-col justify-center items-center p-8 text-center bg-gray-50 border-b border-gray-200 md:p-12 "
           >
             <blockquote
               class="mx-auto mb-8 max-w-2xl text-gray-500 dark:text-gray-400"
             >
-              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+              <h3 class="text-lg font-semibold text-gray-900 ">
                 Solid foundation for any project
               </h3>
               <p class="my-4">
@@ -85,7 +85,7 @@
                 src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/roberta-casas.png"
                 alt="profile picture"
               />
-              <div class="space-y-0.5 font-medium dark:text-white text-left">
+              <div class="space-y-0.5 font-medium  text-left">
                 <div>Roberta Casas</div>
                 <div
                   class="text-sm font-light text-gray-500 dark:text-gray-400"
@@ -96,12 +96,12 @@
             </figcaption>
           </figure>
           <figure
-            class="flex flex-col justify-center items-center p-8 text-center bg-gray-50 border-b border-gray-200 lg:border-b-0 md:p-12 lg:border-r dark:bg-gray-800 dark:border-gray-700"
+            class="flex flex-col justify-center items-center p-8 text-center bg-gray-50 border-b border-gray-200 lg:border-b-0 md:p-12 lg:border-r "
           >
             <blockquote
               class="mx-auto mb-8 max-w-2xl text-gray-500 dark:text-gray-400"
             >
-              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+              <h3 class="text-lg font-semibold text-gray-900 ">
                 Mindblowing workflow and variants
               </h3>
               <p class="my-4">
@@ -124,7 +124,7 @@
                 src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
                 alt="profile picture"
               />
-              <div class="space-y-0.5 font-medium dark:text-white text-left">
+              <div class="space-y-0.5 font-medium  text-left">
                 <div>Jese Leos</div>
                 <div
                   class="text-sm font-light text-gray-500 dark:text-gray-400"
@@ -135,12 +135,12 @@
             </figcaption>
           </figure>
           <figure
-            class="flex flex-col justify-center items-center p-8 text-center bg-gray-50 border-gray-200 md:p-12 dark:bg-gray-800 dark:border-gray-700"
+            class="flex flex-col justify-center items-center p-8 text-center bg-gray-50 border-gray-200 md:p-12 "
           >
             <blockquote
               class="mx-auto mb-8 max-w-2xl text-gray-500 dark:text-gray-400"
             >
-              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+              <h3 class="text-lg font-semibold text-gray-900 ">
                 Efficient Collaborating
               </h3>
               <p class="my-4">
@@ -159,7 +159,7 @@
                 src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/joseph-mcfall.png"
                 alt="profile picture"
               />
-              <div class="space-y-0.5 font-medium dark:text-white text-left">
+              <div class="space-y-0.5 font-medium  text-left">
                 <div>Joseph McFall</div>
                 <div
                   class="text-sm font-light text-gray-500 dark:text-gray-400"

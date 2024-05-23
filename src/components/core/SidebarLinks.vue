@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class=" border-b-2  rounded-sm px-2 py-2">
+        <div class="rounded-sm px-2">
             <router-link :to="route" class="">{{ title }}</router-link>
         </div>
     </div>
