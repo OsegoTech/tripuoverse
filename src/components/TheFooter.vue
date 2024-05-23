@@ -1,6 +1,6 @@
 <template>
   <div>
-    <footer class="bg-white dark:bg-gray-900 border-t-4 border-gray-200">
+    <footer class="bg-white dark:bg-blue-900 border-t-4 border-gray-200">
       <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div class="md:flex md:justify-between">
           <div class="mb-6 md:mb-0">

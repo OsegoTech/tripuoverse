@@ -1,14 +1,14 @@
 <template>
   <div>
-    <section class="bg-white dark:bg-gray-900">
+    <section class="bg-white text-black">
       <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
         <div class="max-w-screen-md mb-8 lg:mb-16 ">
           <h2
-            class="mb-4 lg:mb-8 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white"
+            class="mb-4 lg:mb-8 text-4xl tracking-tight font-extrabold "
           >
             Earn the right Value for your Item and Service
           </h2>
-          <p class="text-gray-500 sm:text-xl dark:text-gray-400">
+          <p class="text-gray-500 sm:text-xl ">
             List your services and items on our platform and get the right
             customer and value for your service and item.
           </p>
@@ -21,7 +21,7 @@
               class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900"
             >
               <svg
-                class="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300"
+                class="w-5 h-5 text-white lg:w-6 lg:h-6 "
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -34,7 +34,7 @@
               </svg>
             </div>
             <h3 class="mb-2 text-xl font-bold dark:text-white">Marketing</h3>
-            <p class="text-gray-500 dark:text-gray-400">
+            <p class="text-gray-500 ">
               "At TripuoVerse, we understand the importance of getting your
               listings in front of the right audience. Our platform not only
               simplifies the buying and selling process but also provides you
@@ -47,7 +47,7 @@
               class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900"
             >
               <svg
-                class="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300"
+                class="w-5 h-5 text-white lg:w-6 lg:h-6 "
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -60,7 +60,7 @@
             <h3 class="mb-2 text-xl font-bold dark:text-white">
               Featured Listings
             </h3>
-            <p class="text-gray-500 dark:text-gray-400">
+            <p class="text-gray-500 ">
               Stand out from the crowd by featuring your listings. Our platform
               offers a 'Featured Listings' option, giving your items or services
               prime visibility and attracting more potential buyers.
@@ -71,7 +71,7 @@
               class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900"
             >
               <svg
-                class="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300"
+                class="w-5 h-5 text-white lg:w-6 lg:h-6 "
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -89,7 +89,7 @@
             <h3 class="mb-2 text-xl font-bold dark:text-white">
               Social Media Integration
             </h3>
-            <p class="text-gray-500 dark:text-gray-400">
+            <p class="text-gray-500 ">
               Share your listings effortlessly on social media platforms.
               Connect your account and let your friends, followers, and the
               wider community know about what you have to offer. It's a great
@@ -101,7 +101,7 @@
               class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900"
             >
               <svg
-                class="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300"
+                class="w-5 h-5 text-white lg:w-6 lg:h-6 "
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -119,7 +119,7 @@
             <h3 class="mb-2 text-xl font-bold dark:text-white">
               Community Engagement
             </h3>
-            <p class="text-gray-500 dark:text-gray-400">
+            <p class="text-gray-500 ">
               Engage with our community forum or blog to share your experiences,
               tips, and unique offerings. Building a presence within the
               community not only promotes your listings but also establishes you
@@ -131,7 +131,7 @@
               class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900"
             >
               <svg
-                class="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300"
+                class="w-5 h-5 text-white lg:w-6 lg:h-6 "
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -144,7 +144,7 @@
             <h3 class="mb-2 text-xl font-bold dark:text-white">
               Direct Payments
             </h3>
-            <p class="text-gray-500 dark:text-gray-400">
+            <p class="text-gray-500 ">
               We offer a direct payment option, allowing you to receive payments
               directly into your bank account. This is a great way to ensure
               that you get paid quickly and securely.
@@ -155,7 +155,7 @@
               class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900"
             >
               <svg
-                class="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300"
+                class="w-5 h-5 text-white lg:w-6 lg:h-6 "
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"

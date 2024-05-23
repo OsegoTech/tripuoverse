@@ -88,16 +88,16 @@
       </div>
     </div>
     <div>
-      <div class=" py-16">
+      <div class=" py-2">
         <div class="container mx-auto px-4">
           <div class="flex justify-between bg-blue-600 px-6 mb-3 py-2 rounded-sm items-center">
-            <h2 class="text-2xl font-bold text-white ">
+            <h2 class=" text-sm md:text-2xl  text-white ">
               Featured Products
             </h2>
-            <RouterLink to="/services" class="text-2xl font-bold text-white">
-              All Products</RouterLink>
+            <RouterLink to="/services" class="text-sm font-bold text-white">
+              SEE ALL</RouterLink>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-1.5">
             <NewProductCard v-for="product in products" :key="product.id" :name="product.title.substring(0, 17) + '...'"
               :price="product.price" :description="product.description.substring(0, 17) + '...'" :image="product.image"
               :seller="product.seller.firstName" :date="product.date" :id="product._id"
@@ -107,15 +107,15 @@
       </div>
     </div>
     <div>
-      <div class=" py-16">
+      <div class=" py-2">
         <div class="container mx-auto px-4">
           <div class="flex justify-between bg-blue-600 px-6 mb-3 py-2 rounded-sm items-center">
-            <h2 class="text-2xl font-bold text-white">Latest Services</h2>
-            <RouterLink to="/services" class="text-2xl font-bold text-white">
-              All services</RouterLink>
+            <h2 class="text-sm md:text-2xl  text-white">Latest Services</h2>
+            <RouterLink to="/services" class="text-sm font-bold text-white">
+              SEE ALL</RouterLink>
           </div>
-          <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8">
-            <NewServiceCard v-for="service in services" :key="service._id" :name="service.name.substring(0, 25) + '...'"
+          <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-1.5">
+            <NewServiceCard v-for="service in services" :key="service._id" :name="service.name.substring(0, 17) + '...'"
               :price="service.price" :description="service.description.substring(0, 17) + '...'" :image="service.image"
               :date="service.date" :id="service._id" :seller="service.provider.firstName"
               :whatsApp="service.provider?.whatsApp" />
@@ -126,20 +126,22 @@
     <FeatureSection />
 
     <SocialProof />
-    <!-- <TestimonialSection /> -->
-    <!-- <NewsletterSection /> -->
+     <TestimonialSection />
+     <NewsletterSection />
     <TheFooter />
   </div>
 </template>
 
 <script setup>
-import { MessageCircleQuestion, VenetianMask, BadgeDollarSign, Recycle, CircuitBoard, Armchair } from "lucide-vue-next";
+import { MessageCircleQuestion, ShoppingBasket, VenetianMask, BadgeDollarSign, Recycle, CircuitBoard, Armchair } from "lucide-vue-next";
 import { ref } from "vue"
 
 import FeatureSection from "../components/FeatureSection.vue";
 import SocialProof from "../components/SocialProof.vue";
 import TheFooter from "../components/TheFooter.vue";
 import TheNavigate from "../components/TheNavigate.vue";
+import TestimonialSection from "../components/TestimonialSection.vue";
+import NewsletterSection from "../components/NewsletterSection.vue";
 
 import NewProductCard from "../components/NewProductCard.vue";
 import store from "../store/index.js";
