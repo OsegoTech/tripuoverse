@@ -43,7 +43,7 @@
             encodeURIComponent(name) +
             ' Item%20'
           "
-          class="text-white hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-1 text-center dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          class="text-white hover:bg-blue-800 font-medium rounded-lg text-sm p-1 text-center "
           ><i class="fa-brands fa-whatsapp" style="color: #04d212"></i
         ></a>
       </div>
