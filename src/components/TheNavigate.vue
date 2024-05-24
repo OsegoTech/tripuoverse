@@ -12,13 +12,15 @@
       </div>
     </div>
 <!--    start of primevue navbar-->
-    <Menubar :model="items">
+    <Menubar :model="items" class="flex items-center justify-around">
       <template #start>
-        <svg width="35" height="40" viewBox="0 0 35 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-[2rem]">
-          <path d="..." fill="var(--primary-color)" />
-          <path d="..." fill="var(--text-color)" />
-        </svg>
+        <RouterLink to="/">
+        <img src="../assets/images/logo.svg" width="150px"/>
+        </RouterLink>
       </template>
+
+
+
       <template #item="{ item, props, hasSubmenu, root }">
         <a v-ripple class="flex items-center" v-bind="props.action">
           <span :class="item.icon" />
@@ -40,34 +42,10 @@
     </Menubar>
 <!--    end of primevue navbar-->
     <div class="flex items-center justify-between px-6 py-2">
-      <h1 class="text-2xl text-blue-500 font-extrabold">Osego</h1>
-      <!-- custom search component -->
-      <div class="px-3 py-2 flex items-center gap-1">
-        <InputText type="text" v-model="value" class="relative" placeholder="Search here....">
-          <Search color="blue" class="absolute left-2" />
-        </InputText>
-        <Button label="Search" severity="info" />
-      </div>
-      <div class="flex items-center gap-1">
-        <div class="flex items-center">
-          <User />
-          <span>Account</span>
-          <Button type="button" icon="pi pi-ellipsis-v" @click="toggle" aria-haspopup="true"
-            aria-controls="overlay_menu" />
-          <Menu ref="menu" id="overlay_menu" :model="items" :popup="true" />
-        </div>
-        <div class="flex items-center gap-1">
-          <HelpCircle />
-          <span>Help</span>
-          <Button type="button" icon="pi pi-ellipsis-v" @click="toggle" aria-haspopup="true"
-            aria-controls="overlay_menu" />
-          <Menu ref="menu" id="overlay_menu" :model="items" :popup="true" />
-        </div>
-        <div class="flex items-center gap-1">
-          <ShoppingCart />
-          <span>Cart</span>
-        </div>
-      </div>
+
+
+
+
     </div>
     
   </div>

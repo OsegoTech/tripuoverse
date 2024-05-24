@@ -6,14 +6,12 @@
           <div class="mb-6 md:mb-0">
             <RouterLink to="/" class="flex items-center">
               <img
-                src="https://flowbite.com/docs/images/logo.svg"
-                class="h-8 me-3"
+                src="../assets/images/osego-high-resolution-logo-white-transparent.svg"
+                width="150px"
                 alt="FlowBite Logo"
               />
-              <span
-                class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
-                >Osego</span
-              >
+
+
             </RouterLink>
           </div>
           <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
